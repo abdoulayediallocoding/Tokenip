@@ -178,7 +178,10 @@ function rembourserRemplacer() {
 
 
 function defautConformite() {
-    InfoDefautConformite();
+   if(window.screen.width > 400) { 
+   
+   InfoDefautConformite();
+   };
 
 
     botui.message.add({

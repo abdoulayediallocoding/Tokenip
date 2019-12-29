@@ -26,14 +26,19 @@ button.botui-actions-buttons-button{
 	-webkit-appearance:button
 }
 
+
+
+
 .botui-app-container{
 	
 	line-height:1;
 	width : 33%;
 	height : 500px
-	
-	
+		
 }
+
+
+
 
 #conteneur {
 	display : flex;
