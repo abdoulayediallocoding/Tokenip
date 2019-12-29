@@ -331,8 +331,8 @@ function pasGarantie() {
 		
 	}
 
-const divPres = document.getElementsByClassName("presentation")[0];
-if(window.screen.width > 400) { 
+let divPres = document.getElementsByClassName("presentation")[0];
+if(window.screen.width < 400) { 
    
 divPres.remove();
 }   
