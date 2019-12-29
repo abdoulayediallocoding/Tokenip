@@ -23,7 +23,7 @@ function InfoDefautConformite () {
 function garantieCommerciale(){
 		
 	let divInfos = document.createElement("div");
-	divInfos.innerHTML = "<p>La garantie légale de conformité et la garantie des vices cachés sont des garanties obligatoires pour le vendeur. Il ne peut pas vous la refuser si vous remplissez les conditions.</p><p>Si vous ne les remplissez pas, vous pouvez vous rabattre sur une éventuelle garantie commerciale. Elle est définie librement par le vendeur et s'ajoute aux garanties légales obligatoires.</p>"
+	divInfos.innerHTML = "<p>La garantie légale de conformité et la garantie des vices cachés sont des garanties obligatoires pour le vendeur. Il ne peut pas vous les refuser si vous remplissez les conditions.</p><p>Si vous ne les remplissez pas, vous pouvez vous rabattre sur une éventuelle garantie commerciale. Elle est définie librement par le vendeur et s'ajoute aux garanties légales obligatoires.</p>"
 	divInfos.setAttribute("data-aos", "fade-left");
 	divInfos.className = "infos-questions";
 
