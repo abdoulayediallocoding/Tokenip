@@ -10,7 +10,9 @@ const filler = document.getElementById("filler");
 
 
 function InfoDefautConformite () {
-		
+	if(window.screen.width >= 400) { 
+
+	
 	let divInfos = document.createElement("div");
 	divInfos.innerHTML ="<p>Exemples de défauts de conformité : bien en panne, défaut esthétique, bien ne correspondant pas à la description faite par le vendeur...</p>"
 	divInfos.className = "infos-questions";
@@ -18,9 +20,12 @@ function InfoDefautConformite () {
 
 	conteneur.replaceChild(divInfos, filler);
 	
+	}
 }
 
 function garantieCommerciale(){
+	if(window.screen.width >= 400) { 
+
 		
 	let divInfos = document.createElement("div");
 	divInfos.innerHTML = "<p>La garantie légale de conformité et la garantie des vices cachés sont des garanties obligatoires pour le vendeur. Il ne peut pas vous les refuser si vous remplissez les conditions.</p><p>Si vous ne les remplissez pas, vous pouvez vous rabattre sur une éventuelle garantie commerciale. Elle est définie librement par le vendeur et s'ajoute aux garanties légales obligatoires.</p>"
@@ -28,11 +33,13 @@ function garantieCommerciale(){
 	divInfos.className = "infos-questions";
 
 	conteneur.replaceChild(divInfos, filler);
-	
+	}
 }
 
 function apresLettre () {
 	
+	if(window.screen.width >= 400) { 
+
 	const divInfos = document.getElementsByClassName("infos-questions")[0];
 	
 	let derDiv = document.createElement("div");
@@ -41,4 +48,5 @@ function apresLettre () {
 	derDiv.className = "infos-questions";
 
 	conteneur.replaceChild(derDiv, divInfos);
+	}
 }
