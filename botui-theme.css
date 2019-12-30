@@ -31,7 +31,7 @@ body, #page-top {
 	
 }
 
-@media (min-width:401px) {
+@media (max-width:401px) {
 	.botui-container{
 	font-size:14px;
 }
