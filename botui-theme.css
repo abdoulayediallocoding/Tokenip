@@ -35,6 +35,15 @@ body, #page-top {
 	.botui-container{
 	font-size:14px;
 }
+
+
+	.botui-app-container {
+		width: 400px;
+		height: 500px;
+		margin: 0 auto
+	}
+
+
 }
 
 .botui-messages-container{
