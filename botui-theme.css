@@ -31,6 +31,16 @@ body, #page-top {
 	
 }
 
+
+.botui-app-container {
+		width: 33%;
+		height: 500px;
+		margin: 0 auto;
+		line-height: 1
+
+	}
+
+
 @media only screen and (max-width: 400px)  {
 	.botui-container{
 	font-size:14px;

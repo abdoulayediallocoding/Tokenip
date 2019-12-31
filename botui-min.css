@@ -27,17 +27,6 @@ button.botui-actions-buttons-button{
 }
 
 
-
-
-
-
-	.botui-app-container {
-		width: 33%;
-		height: 500px;
-		margin: 0 auto
-	}
-
-
 #conteneur {
 	display : flex;
 	flex-direction : row;
