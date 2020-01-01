@@ -1,6 +1,8 @@
 const botui = new BotUI('baba-chatbot'); // instanciation du chatbot
 
-let informationsTemplate = {}; // objet recueillant les réponses  
+let informationsTemplate = {}; // objet recueillant les réponses de l'utilisateur pour remplir template
+
+//supprime lla div contenant la présentation du chatbot pour les versions mobiles (écran < 400px)
 
 let divPres = document.getElementsByClassName("presentation")[0];
 if (window.screen.width <= 400) {
@@ -8,9 +10,7 @@ if (window.screen.width <= 400) {
     divPres.remove();
 }
 
-
-
-
+// introduction du chat
 function init() {
     botui.message.add({
             type: 'html',
@@ -24,8 +24,10 @@ function init() {
                         size: 100
                     }
                 })
-                .then(function(res) { // 
-                    informationsTemplate.nom = res.value;
+                .then(function(res) { 
+				
+                    informationsTemplate.nom = res.value; 
+					
                     botui.message.add({
                             delay: 1000,
                             type: 'html',
@@ -54,7 +56,8 @@ function init() {
                                         .then(function(res) {
 
                                             informationsTemplate.etatBien = res.value;
-
+											
+											// selon que value = neuf ou occasion, démarre la fonction siNeuf ou siOccasion
                                             if (res.value == 'neuf') {
                                                 siNeuf();
                                             } else {
@@ -95,6 +98,7 @@ function siNeuf() {
         })
 }
 
+//path si value = occasion
 
 function siOccasion() {
     botui.message.add({
@@ -116,14 +120,17 @@ function siOccasion() {
                 })
                 .then(function(res) {
                     if (res.value == "moins-deux-ans") {
+						
                         apparitionProblemeOccasion();
                     } else {
+						// si détention du bien > 2 ans, garantie ne joue pas
                         pasGarantie();
                     }
                 })
         })
 }
 
+// fonction unique au path occasion :a quel moment l'utilisateur a rencontré un problème avec son bien d'occasion
 function apparitionProblemeOccasion() {
 
     botui.message.add({
@@ -149,6 +156,7 @@ function apparitionProblemeOccasion() {
                     if (res.value == "dans-six-mois") {
                         nomProduit();
                     } else {
+						// si probleme avec bien est apparru > 6 mois, garantie ne joue pas
                         pasGarantie();
                     }
                 })
@@ -156,74 +164,6 @@ function apparitionProblemeOccasion() {
 
 
 }
-
-
-
-function rembourserRemplacer() {
-
-
-    botui.message.add({
-            delay: 1000,
-            content: "Souhaitez-vous qu'il soit réparé ou remplacé ?"
-        })
-        .then(function() {
-            botui.action.button({
-                    action: [{
-                            text: 'réparé',
-                            value: 'réparation'
-                        },
-                        {
-                            text: 'remplacé',
-                            value: "remplacement"
-                        }
-                    ]
-                })
-                .then(function(res) {
-                    informationsTemplate.rembourserRemplacer = res.value;
-                    votreAdresse();
-                })
-
-        })
-}
-
-
-
-function defautConformite() {
-    if (window.screen.width > 400) {
-
-        InfoDefautConformite();
-    };
-
-
-    botui.message.add({
-            delay: 1000,
-            content: "Qu'est-ce qui ne va pas avec votre produit ?"
-        })
-
-
-        .then(function() {
-
-            botui.action.text({
-                    delay: 1000,
-                    action: {
-                        placeholder: "Décrivez précisément le défaut de conformité",
-                        sub_type: 'textarea',
-                        size: '100'
-                    }
-                })
-                .then(function(res) {
-                    informationsTemplate.anomalie = res.value;
-                    rembourserRemplacer();
-
-                })
-
-        })
-
-
-
-
-}
-
 
 function nomProduit() {
 
@@ -251,29 +191,68 @@ function nomProduit() {
 
 }
 
-function nomVendeur() {
+
+function defautConformite() {
+
+	// arrivée cette question, créé une div où sont présentés des exemples de défaut de conformité
+    InfoDefautConformite();
+  
 
     botui.message.add({
             delay: 1000,
-            content: "Comment s'appelle l'entreprise qui vous a vendu le produit ?"
+            content: "Qu'est-ce qui ne va pas avec votre produit ?"
         })
+
+
         .then(function() {
+
             botui.action.text({
                     delay: 1000,
                     action: {
-                        placeholder: "Indiquez le nom de l'entreprise venderesse",
+                        placeholder: "Décrivez précisément le défaut de conformité",
                         sub_type: 'textarea',
-                        size: '50'
+                        size: '100'
                     }
                 })
                 .then(function(res) {
-                    informationsTemplate.nomVendeur = res.value;
-                    adresseVendeur();
+                    informationsTemplate.anomalie = res.value;
+                    reparerRemplacer();
 
+                })
+
+        })
+
+
+}
+
+
+function reparerRemplacer() {
+
+
+    botui.message.add({
+            delay: 1000,
+            content: "Souhaitez-vous qu'il soit réparé ou remplacé ?"
+        })
+        .then(function() {
+            botui.action.button({
+                    action: [{
+                            text: 'réparé',
+                            value: 'réparation'
+                        },
+                        {
+                            text: 'remplacé',
+                            value: "remplacement"
+                        }
+                    ]
+                })
+                .then(function(res) {
+                    informationsTemplate.reparerRemplacer = res.value;
+                    votreAdresse();
                 })
 
         })
 }
+
 
 
 function votreAdresse() {
@@ -301,6 +280,36 @@ function votreAdresse() {
 }
 
 
+
+
+function nomVendeur() {
+
+    botui.message.add({
+            delay: 1000,
+            content: "Comment s'appelle l'entreprise qui vous a vendu le produit ?"
+        })
+        .then(function() {
+            botui.action.text({
+                    delay: 1000,
+                    action: {
+                        placeholder: "Indiquez le nom de l'entreprise venderesse",
+                        sub_type: 'textarea',
+                        size: '50'
+                    }
+                })
+                .then(function(res) {
+                    informationsTemplate.nomVendeur = res.value;
+                    adresseVendeur();
+
+                })
+
+        })
+}
+
+
+
+
+
 function adresseVendeur() {
 
     botui.message.add({
@@ -317,14 +326,18 @@ function adresseVendeur() {
                 })
                 .then(function(res) {
                     informationsTemplate.adresseVendeur = res.value;
+					garantieApplicable();
 
 
                 })
 
-                .then(function() {
+        })
+}
 
 
-                    botui.message.add({
+function garantieApplicable (){
+	
+	 botui.message.add({
                         loading: true,
                         delay: 1000,
                         content: "Vous remplissez toutes les conditions pour bénéficier de la garantie légale de conformité. "
@@ -343,23 +356,23 @@ function adresseVendeur() {
                                 delay: 1000,
                                 content: "Et l'envoyer (en RAR) avec cette <a href='#' id = 'lePdf'>lettre de mise en demeure</a>  à l'adresse de l'entreprise venderesse."
                             }).then(function() {
+								// fonction créant le pdf personnalisé et permettant son téléchargement
                                 lettrePdf();
+								//fonction indiquant par une div quelles sont les démarches possibles après avoir envoyé la lettre
                                 apresLettre();
                             });
 
 
                         })
                     });
-
-                })
-
-
-
-
-        })
+	
+	
+	
 }
 
+
 function pasGarantie() {
+	// fonction indiquant quelle autre alternative dispose l'utilisateur si garantie de conf ne s'applique pas
     garantieCommerciale();
     botui.message.add({
             delay: 1000,

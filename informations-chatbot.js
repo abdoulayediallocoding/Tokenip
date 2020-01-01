@@ -1,7 +1,12 @@
+// Divs de complément d'informations au dialogue du chatbot;
 
+
+// démarre la librairie AOS pour présenter avec des effets les div contenant des informations
 AOS.init({
+	//durée en ms de l'animation
   duration: 1200,
 })
+
 
 const chat = document.getElementById("baba-chatbot");
 const conteneur = document.getElementById("conteneur");
