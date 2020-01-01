@@ -77,41 +77,21 @@
 	  
 	 	  
 	
-	
-	const pdfDocGenerator = pdfMake.createPdf(docDefinition);
-	pdfDocGenerator.getDataUrl((dataUrl) => {
-	
-	
-	
-	botui.message.add({
-		loading : true,
-		delay : 1000,
-        content: "Vous remplissez toutes les conditions pour bénéficier de la garantie légale de conformité. " 
-        }).then (function () {
-			
-			
-			botui.message.add({
-			delay :1000,
-			content: "Vous pouvez vous munir de la facture et la photocopier." 
-        }).then (function () {
-			
-			botui.message.add({
-			delay : 1000,
-			type : "html",
-			content: "Et l'envoyer (en RAR) avec cette <a href = dataUrl>mise en demeure</a> à l'adresse de l'entreprise venderesse." 
-        }).then (function () {
-			apresLettre();
-		})
-		
-		;
-			
-		
-		})
-		})
-		
-});
 
-	  
+	
+	
+	 const pdf = pdfMake.createPdf(docDefinition);
+	
+
+	
+
+document.getElementById("lePdf").addEventListener ('click', function () {
+	
+	pdf.download();
+	
+})
+
+
 	  
   }
   

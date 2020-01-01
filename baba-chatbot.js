@@ -1,8 +1,19 @@
-const botui = new BotUI('baba-chatbot');
-let informationsTemplate = {}
+const botui = new BotUI('baba-chatbot'); // instanciation du chatbot
+
+let informationsTemplate = {}; // objet recueillant les réponses  
+
+let divPres = document.getElementsByClassName("presentation")[0];
+if (window.screen.width <= 400) {
+
+    divPres.remove();
+}
+
+
+
 
 function init() {
     botui.message.add({
+            type: 'html',
             content: "Bonjour, je suis Baba, un robot juridique qui vous aide à faire jouer votre garantie légale de conformité. Comment vous appelez-vous ?"
         })
         .then(function() { // 
@@ -17,11 +28,11 @@ function init() {
                     informationsTemplate.nom = res.value;
                     botui.message.add({
                             delay: 1000,
+                            type: 'html',
                             content: "Enchanté " + res.value + " !"
 
                         })
                         .then(function(res) { // 
-                            informationsTemplate.nom = res.value;
                             botui.message.add({
                                     delay: 1000,
                                     content: "Dites-moi, avez-vous acheté votre bien neuf ou d'occasion ?"
@@ -149,7 +160,7 @@ function apparitionProblemeOccasion() {
 
 
 function rembourserRemplacer() {
-	
+
 
     botui.message.add({
             delay: 1000,
@@ -178,10 +189,10 @@ function rembourserRemplacer() {
 
 
 function defautConformite() {
-   if(window.screen.width > 400) { 
-   
-   InfoDefautConformite();
-   };
+    if (window.screen.width > 400) {
+
+        InfoDefautConformite();
+    };
 
 
     botui.message.add({
@@ -306,34 +317,64 @@ function adresseVendeur() {
                 })
                 .then(function(res) {
                     informationsTemplate.adresseVendeur = res.value;
-                    lettrePdf();
-					
+
+
                 })
+
+                .then(function() {
+
+
+                    botui.message.add({
+                        loading: true,
+                        delay: 1000,
+                        content: "Vous remplissez toutes les conditions pour bénéficier de la garantie légale de conformité. "
+                    }).then(function() {
+
+
+                        botui.message.add({
+                            delay: 1000,
+                            content: "Vous pouvez vous munir de la facture et la photocopier."
+                        }).then(function() {
+
+
+
+                            botui.message.add({
+
+                                delay: 1000,
+                                content: "Et l'envoyer (en RAR) avec cette <a href='#' id = 'lePdf'>lettre de mise en demeure</a>  à l'adresse de l'entreprise venderesse."
+                            }).then(function() {
+                                lettrePdf();
+                                apresLettre();
+                            });
+
+
+                        })
+                    });
+
+                })
+
+
 
 
         })
 }
 
 function pasGarantie() {
-	garantieCommerciale();
+    garantieCommerciale();
     botui.message.add({
-        delay: 1000,
-        type: "html",
-        content: "Navré ! Vous ne pouvez pas faire jouer la garantie légale de conformité !"
-    })
-	.then (function() {
-		botui.message.add({
-        delay: 1000,
-        type: "html",
-        content: "Mais vous bénéficiez peut être d'une garantie commerciale. Pour plus de renseignements, rendez-vous  <a href ='https://www.service-public.fr/particuliers/vosdroits/F11093'> ici.</a>"
-    });
-	})
-		
-	}
+            delay: 1000,
+            type: "html",
+            content: "Navré ! Vous ne pouvez pas faire jouer la garantie légale de conformité !"
+        })
+        .then(function() {
+            botui.message.add({
+                delay: 1000,
+                type: "html",
+                content: "Mais vous bénéficiez peut être d'une garantie commerciale. Pour plus de renseignements, rendez-vous  <a href ='https://www.service-public.fr/particuliers/vosdroits/F11093'> ici.</a>"
+            });
+        })
 
-let divPres = document.getElementsByClassName("presentation")[0];
-if(window.screen.width <= 400) { 
-   
-divPres.remove();
-}   
+}
+
+
 init();
