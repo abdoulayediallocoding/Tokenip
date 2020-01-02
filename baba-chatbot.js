@@ -346,24 +346,25 @@ function garantieApplicable (){
 
                         botui.message.add({
                             delay: 1000,
-                            content: "Vous pouvez vous munir de la facture et la photocopier."
-                        }).then(function() {
-
-
-
-                            botui.message.add({
-
-                                delay: 1000,
-                                content: "Et l'envoyer (en RAR) avec cette <a href='#' id = 'lePdf'>lettre de mise en demeure</a>  à l'adresse de l'entreprise venderesse."
-                            }).then(function() {
+							type :'html',
+                            content: "Vous pouvez vous munir de la facture, la photocopier, et l'envoyer (en RAR) avec cette <a href='#' id = 'lePdf'>lettre de mise en demeure</a> à l'entreprise venderesse."
+                        })
+						.then(function() {
 								// fonction créant le pdf personnalisé et permettant son téléchargement
                                 lettrePdf();
 								//fonction indiquant par une div quelles sont les démarches possibles après avoir envoyé la lettre
                                 apresLettre();
-                            });
-
-
-                        })
+                            })
+							.then (function () {
+								botui.message.add({
+								loading: true,
+								delay: 1000,
+								content: "Au revoir ;)"
+							});
+								
+								
+							})
+      
                     });
 	
 	
