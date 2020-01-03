@@ -340,14 +340,14 @@ function garantieApplicable (){
 	 botui.message.add({
                         loading: true,
                         delay: 1000,
-                        content: "Vous remplissez toutes les conditions pour bénéficier de la garantie légale de conformité. "
+                        content: "Vous semlez remplir les conditions pour bénéficier de la garantie légale de conformité ! "
                     }).then(function() {
 
 
                         botui.message.add({
                             delay: 1000,
 							type :'html',
-                            content: "Vous pouvez vous munir de la facture, la photocopier, et l'envoyer (en RAR) avec cette <a href='#' id = 'lePdf'>lettre de mise en demeure</a> à l'entreprise venderesse."
+                            content: "Vous pouvez vous munir de la facture de votre produit, la photocopier, et l'envoyer (en RAR) avec cette <a href='#' id = 'lePdf'>lettre de mise en demeure</a> à l'entreprise venderesse."
                         })
 						.then(function() {
 								// fonction créant le pdf personnalisé et permettant son téléchargement
