@@ -358,7 +358,6 @@ function garantieApplicable (){
 							.then (function () {
 								botui.message.add({
 								loading: true,
-								delay: 1000,
 								content: "Au revoir ;)"
 							});
 								
