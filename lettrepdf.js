@@ -53,7 +53,7 @@ function lettrePdf() {
                             "Madame, Monsieur \n\n",
                             "J’ai acheté auprès de vos services le produit suivant : ",
                             informationsTemplate.nomProduit,
-                            ". Ce bien présente présente ces anomalies  : ",
+                            ". Ce bien présente ces anomalies  : ",
                             informationsTemplate.anomalie,
                             ".",
                             "\n\n",
