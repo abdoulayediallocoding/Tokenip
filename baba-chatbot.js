@@ -340,7 +340,7 @@ function garantieApplicable (){
 	 botui.message.add({
                         loading: true,
                         delay: 1000,
-                        content: "Vous semlez remplir les conditions pour bénéficier de la garantie légale de conformité ! "
+                        content: "Vous semblez remplir les conditions pour bénéficier de la garantie légale de conformité ! "
                     }).then(function() {
 
 
