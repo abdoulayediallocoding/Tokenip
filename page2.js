@@ -506,6 +506,21 @@ function handleAccountsChanged(accounts) {
   }
 }
 
+
+
+ethereum
+    .request({ method: 'eth_requestAccounts' })
+    .then(handleAccountsChanged)
+    .catch((err) => {
+      if (err.code === 4001) {
+        // EIP-1193 userRejectedRequest error
+        // If this happens, the user rejected the connection request.
+        console.log('Please connect to MetaMask.');
+      } else {
+        console.error(err);
+      }
+    });
+
 /*********************************************/
 /* Access the user's accounts (per EIP-1102) */
 /*********************************************/
@@ -519,18 +534,7 @@ function handleAccountsChanged(accounts) {
 document.getElementById("valider").addEventListener('click', function(){
 
         
-		 ethereum
-    .request({ method: 'eth_requestAccounts' })
-    .then(handleAccountsChanged)
-    .catch((err) => {
-      if (err.code === 4001) {
-        // EIP-1193 userRejectedRequest error
-        // If this happens, the user rejected the connection request.
-        console.log('Please connect to MetaMask.');
-      } else {
-        console.error(err);
-      }
-    });
+		 
 		
 		
 })
