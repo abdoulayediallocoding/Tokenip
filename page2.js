@@ -468,7 +468,7 @@ async function asyncCall() {
   const provider = await detectEthereumProvider()
 
   if (provider) {
-    // handle provider
+    console.log("y'a");
   } else {
     // handle no provider
 	console.log("y'a pas");
