@@ -502,7 +502,7 @@ function handleAccountsChanged(accounts) {
     console.log('Please connect to MetaMask.');
   } else if (accounts[0] !== currentAccount) {
     currentAccount = accounts[0];
-    // Do any other work!
+    console.log (currentAccount);
   }
 }
 
