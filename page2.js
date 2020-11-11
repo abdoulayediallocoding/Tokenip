@@ -476,6 +476,7 @@ async function asyncCall() {
 
   
 }
+	console.log("y'a pas");
 
 asyncCall();
 
