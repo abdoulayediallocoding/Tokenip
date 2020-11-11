@@ -503,6 +503,19 @@ function handleAccountsChanged(accounts) {
     console.log('Please connect to MetaMask.');
   } else if (accounts[0] !== currentAccount) {
     currentAccount = accounts[0];
+	tokenContract.deploy({
+                data: bytecode,
+                arguments: ["token", 'TKN'],
+              })
+                .send(
+                  {
+                    from: web3.eth.getCoinbase,
+                    
+                  })
+                .on('error', (error) => {
+                  console.log("ça a bug mon renoi"); 
+				  
+        } )
     
   }
 }
