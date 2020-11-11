@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Tokenisateur de droits d'auteurs</h1>
+
+<p>Avec ce générateur, vous pouvez créer un token qui représente vos droits d'auteurs. </br>
+Une fois le formulaire validé, un token et un contrat de cession de droits d'auteur sont générés. Vous pouvez alors céder légalement vos droits dans la blockchain. </p>
+
+<form action="" id="form" method="post">
+
+<div id ="0">
+<label for="oeuvre">Décrivez précisément l'oeuvre que vous avez créée : </label>
+<input type="textarea" id="oeuvre " name="oeuvre" value = "Un dessin, une photo, une chanson, un livre..." rows="4" cols="50" required>
+</div>
+
+<div id ="1">
+<label for="oeuvre">Quel sera le symbole (trois lettres) de votre token ? </label>
+<input type="text" id="symbole " name="symbole" required>
+</div>
+
+<div id ="2">
+<label for="oeuvre">A quel prix (en DAI) souhaitez-vous vendre votre token ? </label>
+<input type="number" id="prix " name="prix" required>
+</div>
+
+
+<div id ="3">
+<label for="oeuvre">Quel pourçentage du prix souhaitez-vous prendre sur chaque revente de votre token ?</label>
+<input type="number" id="commission " name="commission" required>
+</div>
+
+
+
+<input type="submit" id="valider" value="Valider">
+
+
+</form>
+
+
+<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+<script src="https://unpkg.com/@metamask/detect-provider/dist/detect-provider.min.js"></script>
+
+<script src="page2.js"></script>
+
+</body>
+</html>
