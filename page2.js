@@ -478,4 +478,4 @@ document.getElementById("valider").addEventListener('click', function(){
      console.log(error.message);
 	})
 		
-})
+});
