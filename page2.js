@@ -466,13 +466,13 @@ document.getElementById("valider").addEventListener('click', function(){
 	
 	
 	tokenContract.deploy({
-		arguments: [123, 'My String']
+		data: bytecode
 		})
 	.send({
 		from:accounts[0],
 		gas: 1500000,
 		gasPrice: '30000000000000'
-})
+});
 
 		
 })
