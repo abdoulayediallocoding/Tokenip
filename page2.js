@@ -527,4 +527,3 @@ document.getElementById("valider").addEventListener('click', function(){
 });
 	
 		
-});
