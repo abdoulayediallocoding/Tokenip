@@ -473,11 +473,7 @@ document.getElementById("valider").addEventListener('click', function(){
 	
 	async function getAccount() {
 		accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-}
-	getAccount()
-	
-	
-	console.log(accounts[0]);
+		console.log(accounts[0]);
 	ethereum
     .request({
       method: 'eth_sendTransaction',
@@ -493,6 +489,15 @@ document.getElementById("valider").addEventListener('click', function(){
     })
     .then((txHash) => console.log(txHash))
     .catch((error) => console.error);
+	
+		
+		
+		
+		
+}
+	getAccount()
+	
+	
 	
 	
 });
