@@ -467,8 +467,9 @@ var tokenContract =  new web3.eth.Contract(abi);
 
 document.getElementById("valider").addEventListener('click', function(){
 	
-    let accounts = ethereum.request({ method: 'eth_requestAccounts' });  
-		console.log(accounts[0]);
+    let accounts = ethereum.request({ method: 'eth_requestAccounts' }).then(console.log(accounts[0]));  
+	
+		
 
 	
 	tokenContract.deploy({
