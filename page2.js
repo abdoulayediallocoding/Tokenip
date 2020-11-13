@@ -459,29 +459,69 @@ const bytecode = {
 
 
 
-var web3 = new Web3(Web3.givenProvider || 'wss://ropsten.infura.io/ws/v3/4908cc6db7594e58b447d272c6408a1d' );
-
-
+var web3 = new Web3(Web3.givenProvider || 'wss://ropsten.infura.io/ws/v3/4908cc6db7594e58b447d272c6408a1d');
 var tokenContract =  new web3.eth.Contract(abi); 
+
+
+
+
+let currentAccount = null;
+ethereum
+  .request({ method: 'eth_accounts' })
+  .then(handleAccountsChanged)
+  .catch((err) => {
+    // Some unexpected error.
+    // For backwards compatibility reasons, if no accounts are available,
+    // eth_accounts will return an empty array.
+    console.error(err);
+  });
+
+
+
+function handleAccountsChanged(accounts) {
+  if (accounts.length === 0) {
+    // MetaMask is locked or the user has not connected any accounts
+    console.log('Please connect to MetaMask.');
+  } else if (accounts[0] !== currentAccount) {
+    currentAccount = accounts[0];
+    // Do any other work!
+  }
+}
+
+
+
+
 
 
 document.getElementById("valider").addEventListener('click', function(){
 	
-    let accounts = ethereum.request({ method: 'eth_requestAccounts' }).then(console.log(accounts[0]));  
 	
-		
-
+	ethereum
+    .request({ method: 'eth_requestAccounts' })
+    .then(handleAccountsChanged)
+    .catch((err) => {
+      if (err.code === 4001) {
+        // EIP-1193 userRejectedRequest error
+        // If this happens, the user rejected the connection request.
+        console.log('Please connect to MetaMask.');
+      } else {
+        console.error(err);
+      }
+    });
 	
 	tokenContract.deploy({
 		data: bytecode
 		})
 	.send({
-		from:accounts[0],
+		from:currentAccount,
 		gas: 1500000,
 		gasPrice: '30000000000000'
 		})  
 	.on('error', (error) => {
      console.log(error.message);
 	})
+	
+	
+	
 		
 });
