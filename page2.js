@@ -459,7 +459,7 @@ const bytecode = {
 
 
 
-var web3 = new Web3(Web3.givenProvider );
+var web3 = new Web3(Web3.givenProvider || 'wss://ropsten.infura.io/ws/v3/4908cc6db7594e58b447d272c6408a1d' );
 
 
 var tokenContract =  new web3.eth.Contract(abi); 
