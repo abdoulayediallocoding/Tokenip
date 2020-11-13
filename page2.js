@@ -473,26 +473,21 @@ document.getElementById("valider").addEventListener('click', function(){
 	
 	async function getAccount() {
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-	ethereum
-    .request({
-      method: 'eth_sendTransaction',
-      params: [
-        {
-          from: accounts[0],
-		  data : bytecode
-          
-         },
-      ],
-    })
-    .then((txHash) => console.log(txHash))
-    .catch((error) => console.error);
+	
+	myContract.deploy({
+	    data: bytecode,
+
+		arguments: [123, 'My String']
+	})
+		.send({
+			from: accounts[0],
+			gas: 1500000,
+			gasPrice: '30000000000000'
+	});
 		
 	}
 	getAccount()
-	
-	
-	
-	
+		
 });
 	
 		
