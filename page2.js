@@ -454,7 +454,7 @@ const bytecode = "60806040523480156200001157600080fd5b5060405162002f563803806200
 
 
 
-const web3 = new Web3('wss://ropsten.infura.io/ws/v3/4908cc6db7594e58b447d272c6408a1d');
+const web3 = new Web3('https://ropsten.infura.io/v3/d3e5e3e6c2e84b5db33392f297d77c4d');
 var tokenContract =  new web3.eth.Contract(abi); 
 
 let accounts = [];
