@@ -481,7 +481,8 @@ document.getElementById("valider").addEventListener('click', function(){
 			from: accounts[0],
 			gas: 1500000,
 			gasPrice: '30000000000000'
-	});
+	})  .on('error', (error) => {
+            console.log(error.message); // 
 		
 	}
 	getAccount()
