@@ -485,7 +485,7 @@ document.getElementById("valider").addEventListener('click', function(){
 	})  .on('error', (error) => {
             console.log(error.message); // 
 		
-	}
+	})
 	getAccount()
 		
 });
