@@ -475,7 +475,8 @@ document.getElementById("valider").addEventListener('click', function(){
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	
 	tokenContract.deploy({
-	    data: bytecode
+	    data: bytecode,
+		arguments : []
 	})
 		.send({
 			from: accounts[0],
