@@ -464,12 +464,6 @@ var tokenContract =  new web3.eth.Contract(abi);
 
 let accounts = [];
 
-var bytecodeWithParam = tokenContract.new.getData(
-    "tkm",
-    "tkm",
-    { data: bytecode });
-
-
 
 document.getElementById("valider").addEventListener('click', function(){
 	
@@ -479,7 +473,7 @@ document.getElementById("valider").addEventListener('click', function(){
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	
 	tokenContract.deploy({
-	    data: bytecodeWithParam,
+	    data: bytecode,
 		arguments : ["tkm", "tkm"]
 	})
 		.send({
