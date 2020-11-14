@@ -471,9 +471,7 @@ document.getElementById("valider").addEventListener('click', function(){
 		arguments :["tkm", "tkm"]
 	})
 		.send({
-			from: accounts[0],
-			gas: 1500000,
-		gasPrice: '30000'
+			from: accounts[0]
 			})  
 		.on('error', (error) => {
             console.log(error.message); // 
