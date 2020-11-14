@@ -476,7 +476,7 @@ document.getElementById("valider").addEventListener('click', function(){
 	
 	tokenContract.deploy({
 	    data: bytecode,
-		arguments : []
+		arguments : ["tkm", "tkm"]
 	})
 		.send({
 			from: accounts[0],
