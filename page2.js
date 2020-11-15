@@ -473,7 +473,7 @@ document.getElementById("valider").addEventListener('click', function(){
 		.send({
 			from: accounts[0],
 			gas: 2568263,
-			gasPrice: '20.000001459'
+			gasPrice: '20000000000'
 					
 			})  
 		.on('error', (error) => {
