@@ -471,7 +471,7 @@ document.getElementById("valider").addEventListener('click', function(){
 		arguments :["tkm", "tkm"]
 	})
 		.send({
-			from: accounts[0]
+			from: accounts[0],
 			gas: 2568263,
 			gasPrice: '20.000001459'
 					
