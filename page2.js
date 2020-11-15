@@ -463,7 +463,7 @@ document.getElementById("valider").addEventListener('click', function(){
 	
 	
 	
-	async function getAccount() {
+	async function deployer() {
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	
 	tokenContract.deploy({
@@ -481,11 +481,11 @@ document.getElementById("valider").addEventListener('click', function(){
 		
 	})
 	
-	
 	}
 	
-	getAccount()
+	deployer()
 		
 });
+
 	
 		
