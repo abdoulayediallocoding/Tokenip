@@ -553,13 +553,10 @@ async function deployer() {
 		arguments :[prix, commission]
 	})
 	
-		.estimateGas(async function(err, estimationGaz){
-			
-			const estimation = await estimationGaz
-		})
+		
 		.send({
 			from: accounts[0],
-			gas: 3000000,
+			gas: 3000000
 					
 			})  
 		.on('error', (error) => {
