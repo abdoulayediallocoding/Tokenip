@@ -532,6 +532,9 @@ reader.readAsArrayBuffer(file); //read file as ArrayBuffer
 });	 
 
 
+let addresseSmartcontract;
+
+
 
 
 
@@ -549,15 +552,25 @@ async function deployer() {
 		data : bytecode,
 		arguments :[prix, commission]
 	})
+	
+		.estimateGas(function(err, estimationGaz){
+			
+			const estimation = estimationGaz
+		})
 		.send({
 			from: accounts[0],
 			gas: 2568263,
-			gasPrice: '20000000000'
+			gasPrice: estimation
 					
 			})  
 		.on('error', (error) => {
             console.log(error.message); // 
 		
+	})
+		.on('transactionHash', function(hash){
+			
+			addresseSmartcontract =  hash;
+			console.log(addresseSmartcontract);
 	})
 	
 	}
