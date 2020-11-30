@@ -555,11 +555,11 @@ async function deployer() {
 	
 		.estimateGas(function(err, estimationGaz){
 			
-			const estimation = estimationGaz
+			const estimation = await estimationGaz
 		})
 		.send({
 			from: accounts[0],
-			gas: 2568263,
+			gas: 3000000,
 			gasPrice: estimation
 					
 			})  
