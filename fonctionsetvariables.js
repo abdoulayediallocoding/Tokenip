@@ -560,7 +560,6 @@ async function deployer() {
 		.send({
 			from: accounts[0],
 			gas: 3000000,
-			gasPrice: estimation
 					
 			})  
 		.on('error', (error) => {
