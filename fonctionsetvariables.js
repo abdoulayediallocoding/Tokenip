@@ -553,7 +553,7 @@ async function deployer() {
 		arguments :[prix, commission]
 	})
 	
-		.estimateGas(function(err, estimationGaz){
+		.estimateGas(async function(err, estimationGaz){
 			
 			const estimation = await estimationGaz
 		})
