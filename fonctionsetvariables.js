@@ -539,9 +539,15 @@ reader.readAsArrayBuffer(file); //read file as ArrayBuffer
 async function deployer() {
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	let compteEthereum = accounts[0] ;
+	
+	
+	let prix = document.getElementById("prix").value;
+
+    let commission = document.getElementById("royalties").value;
+	
 	tokenContract.deploy({
 		data : bytecode,
-		arguments :["tkm", "tkm"]
+		arguments :[prix, commission]
 	})
 		.send({
 			from: accounts[0],
