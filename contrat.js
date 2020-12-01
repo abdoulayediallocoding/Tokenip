@@ -213,7 +213,7 @@ function contrat() {
 
 
     const pdfDocGenerator = pdfMake.createPdf(docDefinition);
-	const pdfData;
+	let pdfData;
 	pdfDocGenerator.getBase64((data) => {
 	pdfData = data;
 	});
