@@ -563,11 +563,16 @@ async function deployer() {
             console.log(error.message); // 
 		
 	})
-		.on('transactionHash', function(hash){
+		.on('transactionHash', function(transactionHash){
 			
-			addresseSmartcontract =  hash;
-			console.log(addresseSmartcontract);
+			addresseSmartcontract =  transactionHashhash;
+			contrat();
 	})
+	
+		.then(function(newContractInstance){
+		console.log(newContractInstance.methods.address) // instance with the new contract address
+			
+	});
 	
 	}
 	

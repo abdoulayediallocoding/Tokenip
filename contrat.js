@@ -57,7 +57,7 @@ function contrat() {
                         alignment: 'left'
                     },
                     {
-                        text: compteEthereum, 
+                        text: addresseSmartcontract
                     },
 					{
                         text: "\n\n", 
@@ -213,6 +213,9 @@ function contrat() {
 
 
     const pdfDocGenerator = pdfMake.createPdf(docDefinition);
-    pdfDocGenerator.download();
+	const hashContrat = web3.utils.sha3(pdfDocGenerator);
+	
+	console.log(hashContrat);
+	pdfDocGenerator.download();
 
 };
