@@ -213,8 +213,12 @@ function contrat() {
 
 
     const pdfDocGenerator = pdfMake.createPdf(docDefinition);
-	const hashContrat = web3.utils.sha3(pdfDocGenerator);
-	
+	const pdfData;
+	pdfDocGenerator.getBase64((data) => {
+	pdfData = data;
+	});
+	const hashContrat = web3.utils.sha3(pdfData);
+
 	console.log(hashContrat);
 	pdfDocGenerator.download();
 
