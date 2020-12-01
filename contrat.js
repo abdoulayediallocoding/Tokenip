@@ -221,7 +221,7 @@ function contrat() {
 	
 	var file_wordArr = CryptoJS.lib.WordArray.create(pdfBlob); //convert blob to WordArray , see https://code.google.com/p/crypto-js/issues/detail?id=67
 	
-	const hashContrat = web3.utils.sha3(pdfData);
+	const hashContrat = web3.utils.sha3(pdfBlob);
 
 	console.log(hashContrat);
 	pdfDocGenerator.download();
