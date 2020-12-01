@@ -213,10 +213,14 @@ function contrat() {
 
 
     const pdfDocGenerator = pdfMake.createPdf(docDefinition);
-	let pdfData;
-	pdfDocGenerator.getBase64((data) => {
-	pdfData = data;
+	let pdfBlob;
+	
+	pdfDocGenerator.getBlob((blob) => {
+	pdfBlob = blob
 	});
+	
+	var file_wordArr = CryptoJS.lib.WordArray.create(pdfBlob); //convert blob to WordArray , see https://code.google.com/p/crypto-js/issues/detail?id=67
+	
 	const hashContrat = web3.utils.sha3(pdfData);
 
 	console.log(hashContrat);
