@@ -213,17 +213,45 @@ function contrat() {
 
 
     const pdfDocGenerator = pdfMake.createPdf(docDefinition);
-	let pdfBlob;
-	
-	pdfDocGenerator.getBlob((blob) => {
-	pdfBlob = blob
-	});
-	
-	var file_wordArr = CryptoJS.lib.WordArray.create(pdfBlob); //convert blob to WordArray , see https://code.google.com/p/crypto-js/issues/detail?id=67
-	
-	const hashContrat = web3.utils.sha3(pdfBlob);
 
-	console.log(hashContrat);
-	pdfDocGenerator.download();
+	pdfDocGenerator.getBase64((data) => {
+	
+	console.log(data);
+});
+	
+	
+		 
 
-};
+		
+		
+}
+		
+		
+		
+		
+		
+		
+	
+		
+		//var texte =  buffer.toString()
+		
+	//console.log(buffer); 
+		
+
+		
+		//var hash = CryptoJS.SHA256(textPdf).toString();
+		
+		//console.log(hash); 
+		
+		
+		
+	
+
+
+	
+	
+	
+
+	
+	
+
