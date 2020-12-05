@@ -512,7 +512,7 @@ const tokenContract =  new web3.eth.Contract(abi);
 
 let accounts = [];
 
-let hash;
+let hash; // hash du fichier
 
 $("#f2").change(function () {
 var reader = new FileReader(); //define a Reader
@@ -534,16 +534,17 @@ reader.readAsArrayBuffer(file); //read file as ArrayBuffer
 
 let addresseSmartcontract;
 
-
+let hashContrat;
 
 
 
 
 async function deployer() {
+	
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-	let compteEthereum = accounts[0] ;
 	
-	
+	let compteEthereum = accounts[0];
+		
 	let prix = document.getElementById("prix").value;
 
     let commission = document.getElementById("royalties").value;
@@ -553,7 +554,6 @@ async function deployer() {
 		arguments :[prix, commission]
 	})
 	
-		
 		.send({
 			from: accounts[0],
 			gas: 3000000
@@ -563,16 +563,19 @@ async function deployer() {
             console.log(error.message); // 
 		
 	})
-		.on('transactionHash', function(transactionHash){
 			
-			addresseSmartcontract =  transactionHashhash;
-			contrat();
-	})
-	
 		.then(function(newContractInstance){
-		console.log(newContractInstance.methods.address) // instance with the new contract address
 			
-	});
+			addresseSmartcontract =  newContractInstance.options.address;
+			contrat();
+			
+			newContractInstance.methods.setHash(123).send({from: accounts[0] });
+			
+			
+	})
+		
+	
+	;
 	
 	}
 	
