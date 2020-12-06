@@ -214,6 +214,8 @@ function contrat() {
 
     const pdfDocGenerator = pdfMake.createPdf(docDefinition);
 
+	return new Promise(function (resolve, reject) {
+
 	
 	pdfDocGenerator.telecharger().then((blob)=> {
 		
@@ -232,7 +234,8 @@ function contrat() {
 				var Hash = sha256_hash.toString(); //output result
 				hashContrat = "0x" + Hash;
 				console.log(hashContrat);
-				saveAs(blob);
+				resolve(hashContrat);
+				//saveAs(blob);
 
 			};
 		
@@ -243,31 +246,11 @@ function contrat() {
 
 
 		 
+	})
 
 		
 		
 }
-		
-		
-		
-		
-		
-		
-	
-		
-		//var texte =  buffer.toString()
-		
-	//console.log(buffer); 
-		
-
-		
-		//var hash = CryptoJS.SHA256(textPdf).toString();
-		
-		//console.log(hash); 
-		
-		
-		
-	
 
 
 	

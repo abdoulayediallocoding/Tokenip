@@ -573,13 +573,18 @@ async function deployer() {
 			contract = new web3.eth.Contract(abi, addresseSmartcontract);
 
 			
-			contrat();
+			contrat().then((leHash) =>{
+				
+				console.log(leHash); 
+				contract.methods.setHash(leHash).send({from: accounts[0] });
+
+				
+
+				
+			});
 			
-			console.log(hashContrat);
 			
-			console.log(addresseSmartcontract);
 			
-			contract.methods.setHash(hashContrat).send({from: accounts[0] });
 			
 			
 	})
