@@ -575,6 +575,10 @@ async function deployer() {
 			
 			contrat();
 			
+			console.log(hashContrat);
+			
+			console.log(addresseSmartcontract);
+			
 			contract.methods.setHash(hashContrat).send({from: accounts[0] });
 			
 			
