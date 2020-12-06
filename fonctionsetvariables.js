@@ -569,7 +569,7 @@ async function deployer() {
 			addresseSmartcontract =  newContractInstance.options.address;
 			contrat();
 			
-			newContractInstance.methods.setHash(hashContrat).send({from: accounts[0] });
+			tokenContract.methods.setHash(hashContrat).send({from: accounts[0] });
 			
 			
 	})
