@@ -5,14 +5,13 @@
     <title>TokenIP</title>
 
 
-    <link rel="stylesheet" href="form.css">
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
 
 
 
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="form.js"></script>
+    <link rel="stylesheet" href="form.css">
 
 	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
@@ -24,9 +23,11 @@
 
 
  <h1>TokenIP</h1>
- <section>
+ <div id="conteneur">
+
+ <section id="explications">
   <p>Tokenisez vos droits d'auteurs ! </p>
-  <p id  ="explications">TokenIP est une illustration du potentiel de la tokenisation dans la propriété intellectuelle. Consultez la faq pour comprendre comment il fonctionne.</p>
+  <p> TokenIP est une illustration du potentiel de la tokenisation dans la propriété intellectuelle. Consultez la faq pour comprendre comment il fonctionne.</p>
 </section>
  
  
@@ -47,12 +48,12 @@
 	   
 </section>
 
-<section>
+<section id="prixcom">
   <p><b>Prix et commission<b/></p>
   <input type="number" placeholder="Prix en euros" id="prix"/>
   <input type="number" placeholder="% commission sur 2nd ventes" id="royalties" />
 </section>
-
+</div>
 
 
 <div class="button" id="prev">Précédent</div>

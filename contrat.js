@@ -1,4 +1,4 @@
-function contrat() {
+function contratPDF() {
 
 
     let nom = document.getElementById("nom").value;
@@ -91,7 +91,7 @@ function contrat() {
                             " (ci-après la « Création »).",
 							"\n\n",
 							"L'oeuvre est représentée par l'emprunte numérique suivante(hash 256) : ",
-							hash,
+							hashOeuvre,
                             "\n\n",
                             "Il a souhaité représenter le présent contrat de cession de droits d'auteur par un Jeton existant dans la Blockchain. La détention du Jeton indique qui est la partie cessionnaire des droits d'auteurs.\n\n",
                             "Ainsi, le Détenteur du Jeton est le titulaire des droits d'exploitation présentement cédés.",
@@ -232,9 +232,9 @@ function contrat() {
 				var file_wordArr = CryptoJS.lib.WordArray.create(file_result); //convert blob to WordArray , see https://code.google.com/p/crypto-js/issues/detail?id=67
 				var sha256_hash = CryptoJS.SHA256(file_wordArr); //calculate SHA1 hash
 				var Hash = sha256_hash.toString(); //output result
-				hashContrat = "0x" + Hash;
-				console.log(hashContrat);
-				resolve(hashContrat);
+				hashContrat = Hash;
+				//console.log(hashContrat);
+				resolve(hashContrat, blob);
 				//saveAs(blob);
 
 			};
