@@ -545,7 +545,6 @@ function patiente1(){
 	
 	let conteneur = document.getElementById("conteneur");
 	
-	document.getElementById("prixcom").remove();
 	
 	
 	conteneur.appendChild(explications);
