@@ -628,7 +628,7 @@ async function deployer() {
 	contratADeployer.deploy({
 		
 		data : bytecode,
-		arguments :[prix, commission]
+		arguments :[1, 1]
 	})
 	
 		.send({
