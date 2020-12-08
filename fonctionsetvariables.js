@@ -545,22 +545,20 @@ let commission = document.getElementById("royalties").value;
 function patiente1(){
 	
 	
-	return new Promise(function (resolve, reject) {
+	//return new Promise(function (resolve, reject) {
 	
 	
-	let explications = document.createElement("section");
-	explications.id="patiente1";
-	explications.innerHTML =   "<p>Patientez quelques instants</p><p>Etape 1/2 : Création du token et génération du contrat...</p>"
 	
-	let conteneur = document.getElementById("conteneur");
 	
-	document.getElementById("prixcom").remove();
-	
-	conteneur.appendChild(explications);
-	
-	resolve();
 
-})
+	let section = document.getElementById("prixcom");
+	
+	section.innerHTML =  "<p>Patientez quelques instants</p><p>Etape 1/2 : Création du token et génération du contrat...</p>";
+	
+
+	
+	
+	//resolve();//})
 	
 }
 
@@ -621,7 +619,7 @@ function presentationFinale (adresseTransaction, blob) {
 
 async function deployer() {
 	
-	patiente1().then( async function(){
+	patiente1();
 	
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	
@@ -668,14 +666,8 @@ async function deployer() {
 								
 			});
 			
-			
-			
-			
-			
-	})
-		
-	})
-	;
+						
+	});
 	
 	}
 	
