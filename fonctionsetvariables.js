@@ -621,12 +621,15 @@ async function deployer() {
 	
 	patiente1().then( async function(prix, commission){
 	
-	console.log(prix);
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	
 	let compteEthereum = accounts[0];
 		
 	contratADeployer.deploy({
+		console.log(prix);
+		console.log(commission);
+
+
 		data : bytecode,
 		arguments :[prix, commission]
 	})
