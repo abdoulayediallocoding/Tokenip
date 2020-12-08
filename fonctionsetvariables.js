@@ -576,7 +576,7 @@ function patiente2(){
 	
 	let conteneur = document.getElementById("conteneur");
 	
-	document.getElementById("patiente2").remove();
+	document.getElementById("patiente1").remove();
 	
 	
 	conteneur.appendChild(explications);
