@@ -545,7 +545,7 @@ function patiente1(){
 	
 	let conteneur = document.getElementById("conteneur");
 	
-	
+	document.getElementById("prixcom").remove();
 	
 	conteneur.appendChild(explications);
 
@@ -609,6 +609,8 @@ function presentationFinale (adresseTransaction, blob) {
 
 async function deployer() {
 	
+	patiente1();
+
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	
 	let compteEthereum = accounts[0];
