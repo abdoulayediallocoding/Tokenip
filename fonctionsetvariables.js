@@ -537,21 +537,16 @@ let addresseSmartcontract;
 
 let hashContrat;
 
-let prix;
+let prix =  document.getElementById("prix").value;
 
-let commission;
+let commission = document.getElementById("royalties").value;
 
 function patiente1(){
 	
 	
 	return new Promise(function (resolve, reject) {
 	
-	 prix = document.getElementById("prix").value;
-
-     commission = document.getElementById("royalties").value;
 	
-		resolve(prix, commission);
-
 	let explications = document.createElement("section");
 	explications.id="patiente1";
 	explications.innerHTML =   "<p>Patientez quelques instants</p><p>Etape 1/2 : Création du token et génération du contrat...</p>"
