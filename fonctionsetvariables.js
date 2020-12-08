@@ -539,6 +539,15 @@ let hashContrat;
 
 function patiente1(){
 	
+	
+	new Promise(function (resolve, reject) {
+	
+	const prix = document.getElementById("prix").value;
+
+    const commission = document.getElementById("royalties").value;
+	
+		resolve(prix, commission);
+
 	let explications = document.createElement("section");
 	explications.id="patiente1";
 	explications.innerHTML =   "<p>Patientez quelques instants</p><p>Etape 1/2 : Création du token et génération du contrat...</p>"
@@ -549,7 +558,8 @@ function patiente1(){
 	
 	conteneur.appendChild(explications);
 
-
+})
+	
 }
 
 
@@ -609,16 +619,12 @@ function presentationFinale (adresseTransaction, blob) {
 
 async function deployer() {
 	
-	patiente1();
+	patiente1().then(function(prix, commission){
 
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	
 	let compteEthereum = accounts[0];
 		
-	let prix = document.getElementById("prix").value;
-
-    let commission = document.getElementById("royalties").value;
-	
 	contratADeployer.deploy({
 		data : bytecode,
 		arguments :[prix, commission]
@@ -665,7 +671,7 @@ async function deployer() {
 			
 	})
 		
-	
+	})
 	;
 	
 	}
