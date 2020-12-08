@@ -556,6 +556,8 @@ function patiente1(){
 	document.getElementById("prixcom").remove();
 	
 	conteneur.appendChild(explications);
+	
+	resolve();
 
 })
 	
