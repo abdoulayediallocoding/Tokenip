@@ -541,6 +541,7 @@ let prix =  document.getElementById("prix").value;
 
 let commission = document.getElementById("royalties").value;
 
+
 function patiente1(){
 	
 	
@@ -620,7 +621,7 @@ function presentationFinale (adresseTransaction, blob) {
 
 async function deployer() {
 	
-	patiente1().then( async function(prix, commission){
+	patiente1().then( async function(){
 	
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	
