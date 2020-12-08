@@ -620,7 +620,9 @@ function presentationFinale (adresseTransaction, blob) {
 async function deployer() {
 	
 	patiente1().then( async function(prix, commission){
-
+	
+	var prix = prix;
+	var commission = commission;
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	
 	let compteEthereum = accounts[0];
@@ -642,7 +644,7 @@ async function deployer() {
 			
 		.then(function(newContractInstance){
 			
-			patiente2()
+			patiente2();
 			
 			addresseSmartcontract =  newContractInstance.options.address;
 			
