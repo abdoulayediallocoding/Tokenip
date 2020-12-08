@@ -619,7 +619,7 @@ function presentationFinale (adresseTransaction, blob) {
 
 async function deployer() {
 	
-	patiente1().then(function(prix, commission){
+	patiente1().then( async function(prix, commission){
 
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	
