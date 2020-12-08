@@ -626,10 +626,7 @@ async function deployer() {
 	let compteEthereum = accounts[0];
 		
 	contratADeployer.deploy({
-		console.log(prix);
-		console.log(commission);
-
-
+		
 		data : bytecode,
 		arguments :[prix, commission]
 	})
