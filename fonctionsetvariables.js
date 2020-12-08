@@ -621,8 +621,7 @@ async function deployer() {
 	
 	patiente1().then( async function(prix, commission){
 	
-	var prix = prix;
-	var commission = commission;
+	console.log(prix);
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	
 	let compteEthereum = accounts[0];
