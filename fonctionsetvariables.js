@@ -537,14 +537,18 @@ let addresseSmartcontract;
 
 let hashContrat;
 
+let prix;
+
+let commission;
+
 function patiente1(){
 	
 	
 	return new Promise(function (resolve, reject) {
 	
-	const prix = document.getElementById("prix").value;
+	 prix = document.getElementById("prix").value;
 
-    const commission = document.getElementById("royalties").value;
+     commission = document.getElementById("royalties").value;
 	
 		resolve(prix, commission);
 
@@ -628,7 +632,7 @@ async function deployer() {
 	contratADeployer.deploy({
 		
 		data : bytecode,
-		arguments :[1, 1]
+		arguments :[prix, commission]
 	})
 	
 		.send({
