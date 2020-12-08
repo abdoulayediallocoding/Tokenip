@@ -540,7 +540,7 @@ let hashContrat;
 function patiente1(){
 	
 	
-	new Promise(function (resolve, reject) {
+	return new Promise(function (resolve, reject) {
 	
 	const prix = document.getElementById("prix").value;
 
