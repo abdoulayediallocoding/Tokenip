@@ -233,7 +233,7 @@ function contratPDF(prix, commission) {
 				var sha256_hash = CryptoJS.SHA256(file_wordArr); //calculate SHA1 hash
 				var Hash = sha256_hash.toString(); //output result
 				hashContrat = Hash;
-				//console.log(hashContrat);
+				console.log(hashContrat);
 				resolve(hashContrat, blob);
 				//saveAs(blob);
 
