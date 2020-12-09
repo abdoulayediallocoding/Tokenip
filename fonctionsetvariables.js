@@ -547,25 +547,10 @@ function patiente1(){
 
 	let section = document.getElementById("prixcom");
 	
-	let p1 = document.createElement("p");
-	
-	p1.value = "Patientez quelques instants";
-	
-	let p2 = document.createElement("p");
-	p2.value = "Etape 1/2 : Création du token et génération du contrat...";
-	
-	p1.id = "etape1";
-	p2.id = "etape2";
-	
-	
-	document.getElementById("prix").style.visibility = "hidden";
-	
-	document.getElementById("royalties").style.visibility = "hidden";
-
-	section.appendChild(p1);
-	
-	section.appendChild(p2);
-
+	section.innerHTML = "<p>Patientez quelques instants</p><p>Etape 1/2 : Création du token et génération du contrat...</p>";
+		
+	document.getElementById("prix").remove();
+	document.getElementById("royalties").remove();
 	
 	
 	//resolve();//})
@@ -577,7 +562,7 @@ function patiente1(){
 function patiente2(){
 	
 	
-	document.getElementById("etape2").value = "Etape 2/2 : Envoi de l'emprunte numérique du contrat au token..."
+	document.getElementById("prixcom").innerHTML = "<p>Patientez quelques instants</p><p>Etape 2/2 : Envoi de l'emprunte numérique du contrat au token"
 	
 }
 
@@ -586,11 +571,8 @@ function patiente2(){
 
 function presentationFinale (adresseTransaction, blob) {
 	
-	document.getElementById("etape1").value = "C'est terminé !";
-	
-	let p2 = document.getElementById("etape2");
-	p2.value = "Voici l'adresse de transaction de votre token: ";
-	p2.appendChild(adresseTransaction);
+	document.getElementById("prixcom").innerHTML = "Voici l'adresse de transaction de votre token: ";
+	document.getElementById("prixcom").appendChild(adresseTransaction);
 		
 	let p3 = document.createElement("p");
 	p3.value = "Voici l'adresse le contrat: ";
@@ -606,9 +588,14 @@ function presentationFinale (adresseTransaction, blob) {
 async function deployer() {
 	
 	
-	let prix =  document.getElementById("prix").value;
+	const prix =  document.getElementById("prix").value;
+	const commission = document.getElementById("royalties").value;
 
-	let commission = document.getElementById("royalties").value;
+	patiente1();
+	
+	
+	
+	
 		
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	
