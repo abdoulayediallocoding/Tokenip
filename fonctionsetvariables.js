@@ -536,9 +536,7 @@ let addresseSmartcontract;
 
 let hashContrat;
 
-let prix =  document.getElementById("prix").value;
 
-let commission = document.getElementById("royalties").value;
 
 
 function patiente1(){
@@ -607,11 +605,14 @@ function presentationFinale (adresseTransaction, blob) {
 
 async function deployer() {
 	
-	//patiente1();
 	
-	console.log(prix);
-	
+	let prix =  document.getElementById("prix").value;
+
+	let commission = document.getElementById("royalties").value;
+		
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+	
+	patiente1();
 	
 	let compteEthereum = accounts[0];
 		
