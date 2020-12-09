@@ -549,12 +549,15 @@ function patiente1(){
 
 	let section = document.getElementById("prixcom");
 	
-	let p1 = document.createElement("p").value = "Patientez quelques instants";
+	let p1 = document.createElement("p");
 	
-	let p2 = document.createElement("p").value = "Etape 1/2 : Création du token et génération du contrat...";
+	p1.value = "Patientez quelques instants";
 	
-	 p1.id = "etape1";
-	 p2.id = "etape2";
+	let p2 = document.createElement("p");
+	p2.value = "Etape 1/2 : Création du token et génération du contrat...";
+	
+	p1.id = "etape1";
+	p2.id = "etape2";
 	
 	
 	document.getElementById("prix").style.visibility = "hidden";
