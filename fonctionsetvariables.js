@@ -609,6 +609,8 @@ async function deployer() {
 	
 	//patiente1();
 	
+	console.log(prix);
+	
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
 	
 	let compteEthereum = accounts[0];
