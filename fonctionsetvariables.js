@@ -547,15 +547,18 @@ function patiente1(){
 	
 	//return new Promise(function (resolve, reject) {
 	
-	
-	
-	
 
 	let section = document.getElementById("prixcom");
 	
-	section.innerHTML =  "<p>Patientez quelques instants</p><p>Etape 1/2 : Création du token et génération du contrat...</p>";
+	const p1 = document.createElement("p").value = "Patientez quelques instants";
 	
+	const p2 = document.createElement("p").value = "Etape 1/2 : Création du token et génération du contrat...";
+	
+	document.getElementById("prix").style.visibility = "hidden";
+	
+	document.getElementById("royalties").style.visibility = "hidden";
 
+	section.appendChild(p1, p2);
 	
 	
 	//resolve();//})
