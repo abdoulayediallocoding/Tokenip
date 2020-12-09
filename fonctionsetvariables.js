@@ -627,7 +627,7 @@ async function deployer() {
 			contract = new web3.eth.Contract(abi, addresseSmartcontract);
 
 			
-			contratPDF().then((leHash, blob) =>{
+			contratPDF(prix, commission).then((leHash, blob) =>{
 				
 				//console.log(leHash); 
 				contract.methods.setHash(leHash).send({from: accounts[0] })

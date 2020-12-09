@@ -1,4 +1,4 @@
-function contratPDF() {
+function contratPDF(prix, commission) {
 
 
     let nom = document.getElementById("nom").value;
@@ -7,9 +7,9 @@ function contratPDF() {
 
     let oeuvre = document.getElementById("description").value;
 
-    let prix = document.getElementById("prix").value;
+    //let prix = document.getElementById("prix").value;
 
-    let commission = document.getElementById("royalties").value;
+    //let commission = document.getElementById("royalties").value;
 	
     let compteEthereum = accounts[0];
 	
