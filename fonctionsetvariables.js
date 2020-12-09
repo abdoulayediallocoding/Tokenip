@@ -550,9 +550,13 @@ function patiente1(){
 
 	let section = document.getElementById("prixcom");
 	
-	const p1 = document.createElement("p").value = "Patientez quelques instants";
+	let p1 = document.createElement("p").value = "Patientez quelques instants";
 	
-	const p2 = document.createElement("p").value = "Etape 1/2 : Création du token et génération du contrat...";
+	let p2 = document.createElement("p").value = "Etape 1/2 : Création du token et génération du contrat...";
+	
+	let p1.id = "etape1"
+	let p2.id = "etape2";
+	
 	
 	document.getElementById("prix").style.visibility = "hidden";
 	
@@ -569,16 +573,8 @@ function patiente1(){
 
 function patiente2(){
 	
-	let explications = document.createElement("section");
-	explications.id = "patiente2";
-	explications.innerHTML =   "<p>Patientez quelques instants</p><p>Etape 2/2 : Envoi de l'emprunte numérique du contrat au token...</p>"
 	
-	let conteneur = document.getElementById("conteneur");
-	
-	document.getElementById("patiente1").remove();
-	
-	
-	conteneur.appendChild(explications);
+	document.getElementById("etape2").value = "Etape 2/2 : Envoi de l'emprunte numérique du contrat au token..."
 	
 }
 
@@ -587,35 +583,19 @@ function patiente2(){
 
 function presentationFinale (adresseTransaction, blob) {
 	
-	let explications = document.createElement("section");
-	explications.id = "presentationFinale";
+	document.getElementById("etape1").value = "C'est terminé !";
 	
-	let p = document.createElement("p");
-	p.value = "C'est terminé !";
-	explications.appendChild(p);
-	
-	let ligne = document.createElement("br");
-	explications.appendChild(ligne);
-	
-	let p2 = document.createElement("p");
+	let p2 = document.getElementById("etape2");
 	p2.value = "Voici l'adresse de transaction de votre token: ";
-	
 	p2.appendChild(adresseTransaction);
-	
-	url = URL.createObjectURL(blob);
+		
 	let p3 = document.createElement("p");
-	p3.value = "Voici l'adresse le contrat";
+	p3.value = "Voici l'adresse le contrat: ";
+	url = URL.createObjectURL(blob);
 	p3.src = url;
 	
 	
-	let conteneur = document.getElementById("conteneur");
-	
-	document.getElementById("patiente2").remove();
-	
-	
-	conteneur.appendChild(explications);
-
-	
+	document.getElementById("prixcom").appendChild(p3);
 	
 }
 
