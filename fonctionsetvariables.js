@@ -561,7 +561,10 @@ function patiente1(){
 	
 	document.getElementById("royalties").style.visibility = "hidden";
 
-	section.appendChild(p1, p2);
+	section.appendChild(p1);
+	
+	section.appendChild(p2);
+
 	
 	
 	//resolve();//})
