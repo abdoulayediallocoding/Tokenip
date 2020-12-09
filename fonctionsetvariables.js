@@ -549,8 +549,7 @@ function patiente1(){
 	
 	section.innerHTML = "<p>Patientez quelques instants</p><p>Etape 1/2 : Création du token et génération du contrat...</p>";
 		
-	document.getElementById("prix").remove();
-	document.getElementById("royalties").remove();
+
 	
 	
 	//resolve();//})
