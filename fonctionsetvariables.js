@@ -579,14 +579,30 @@ function patiente2(){
 
 function presentationFinale (adresseTransaction, blob) {
 	
-	document.getElementById("prixcom").innerHTML = "Voici l'adresse de transaction de votre token: ";
-	document.getElementById("prixcom").appendChild(adresseTransaction);
-		
-	let p3 = document.createElement("p");
-	p3.value = "Voici l'adresse le contrat: ";
-	url = URL.createObjectURL(blob);
-	p3.src = url;
 	
+	document.getElementById("prixcom").innerHTML = "";
+	
+	let p2 = document.createElement("p");
+	
+	let t1 = document.createTextNode("Voici l'adresse de votre token: ");	
+
+	let t2 = document.createTextNode(adresseTransaction);	
+	
+	p2.appendChild(t1);
+	
+	p2.appendChild(t2);
+	
+	document.getElementById("prixcom").appendChild(p2);
+
+	let p3 = document.createElement("p");
+	
+	let t3 = document.createTextNode("Et le lien de votre contrat.");
+	
+	const url = URL.createObjectURL(blob);
+	
+	t3.href = url;
+	
+	p3.appendChild(t3);
 	
 	document.getElementById("prixcom").appendChild(p3);
 	
