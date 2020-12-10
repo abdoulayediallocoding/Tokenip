@@ -605,17 +605,7 @@ function presentationFinale (adresseTransaction, blob) {
 	
 	document.getElementById("prixcom").appendChild(p2);
 
-	let p3 = document.createElement("p");
-	
-	let t3 = document.createTextNode("Et le lien de votre contrat.");
-	
-	const url = URL.createObjectURL(blob);
-	
-	t3.href = url;
-	
-	p3.appendChild(t3);
-	
-	document.getElementById("prixcom").appendChild(p3);
+	saveAS(blob);
 	
 	document.getElementById("loading").remove();
 	
