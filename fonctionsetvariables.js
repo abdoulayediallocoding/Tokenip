@@ -557,7 +557,18 @@ function patiente1(){
 	let section = document.getElementById("prixcom");
 	
 	section.innerHTML = "<p>Patientez quelques instants</p><p>Etape 1/2 : Création du token et génération du contrat...</p>";
-		
+	
+	document.getElementById("prev").remove();
+	
+	document.getElementById("submit").remove();
+
+	let loading = document.createElement("div");
+	
+	loading.className="lds-dual-ring";
+	
+	loading.id = "loading";
+	
+	body.appendChild(loading);
 
 	
 	
@@ -605,6 +616,8 @@ function presentationFinale (adresseTransaction, blob) {
 	p3.appendChild(t3);
 	
 	document.getElementById("prixcom").appendChild(p3);
+	
+	document.getElementById("loading").remove();
 	
 }
 
