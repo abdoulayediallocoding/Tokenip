@@ -235,7 +235,6 @@ function contratPDF(prix, commission) {
 				hashContrat = Hash;
 				console.log(hashContrat);
 				resolve(hashContrat, blob);
-				//saveAs(blob);
 
 			};
 		
