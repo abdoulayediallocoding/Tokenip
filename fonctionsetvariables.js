@@ -568,7 +568,7 @@ function patiente1(){
 	
 	loading.id = "loading";
 	
-	body.appendChild(loading);
+	document.body.appendChild(loading);
 
 	
 	
