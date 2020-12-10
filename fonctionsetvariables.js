@@ -563,7 +563,7 @@ function patiente1(){
 	
 	loading.id = "loading";
 	
-	document.getElementById("load").appendChild(loading);
+	section.appendChild(loading);
 
 	
 	
@@ -613,7 +613,7 @@ async function deployer() {
 	const commission = document.getElementById("royalties").value;
 
 
-document.getElementById("prev").remove();
+	document.getElementById("prev").remove();
 	
 	document.getElementById("submit").remove();
 	
