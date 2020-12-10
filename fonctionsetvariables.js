@@ -551,16 +551,11 @@ let hashContrat;
 function patiente1(){
 	
 	
-	//return new Promise(function (resolve, reject) {
 	
 
 	let section = document.getElementById("prixcom");
 	
 	section.innerHTML = "<p>Patientez quelques instants</p><p>Etape 1/2 : Création du token et génération du contrat...</p>";
-	
-	//document.getElementById("prev").remove();
-	
-	document.getElementById("submit").remove();
 
 	let loading = document.createElement("div");
 	
@@ -572,7 +567,6 @@ function patiente1(){
 
 	
 	
-	//resolve();//})
 	
 }
 
@@ -618,6 +612,11 @@ async function deployer() {
 	const prix =  document.getElementById("prix").value;
 	const commission = document.getElementById("royalties").value;
 
+
+document.getElementById("prev").remove();
+	
+	document.getElementById("submit").remove();
+	
 	patiente1();
 	
 	
