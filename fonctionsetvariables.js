@@ -575,7 +575,15 @@ function patiente1(){
 function patiente2(){
 	
 	
-	document.getElementById("prixcom").innerHTML = "<p>Patientez quelques instants</p><p>Etape 2/2 : Envoi de l'emprunte numérique du contrat au token"
+	document.getElementById("prixcom").innerHTML = "<p>Patientez quelques instants</p><p>Etape 2/2 : Envoi de l'emprunte numérique du contrat au token...";
+	
+	let loading = document.createElement("div");
+	
+	loading.className="lds-dual-ring";
+	
+	loading.id = "loading";
+	
+	document.getElementById("prixcom").appendChild(loading);
 	
 }
 
@@ -599,7 +607,7 @@ function presentationFinale (adresseTransaction, blob) {
 	
 	document.getElementById("prixcom").appendChild(p2);
 
-	saveAS(blob);
+	saveAs(blob);
 	
 	document.getElementById("loading").remove();
 	
