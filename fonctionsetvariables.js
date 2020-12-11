@@ -577,7 +577,7 @@ function patiente1(){
 function patiente2(){
 	
 	
-	document.getElementById("prixcom").innerHTML = "<p>Patientez quelques instants</p><p>Etape 2/2 : Envoi de l'emprunte numérique du contrat au token...";
+	document.getElementById("prixcom").innerHTML = "<p>Patientez quelques instants</p><p>Etape 2/2 : Envoi de l'empreinte numérique du contrat au token...";
 	
 	let loading = document.createElement("div");
 	
