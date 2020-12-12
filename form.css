@@ -20,11 +20,13 @@ body {
 
 
 #description {
-	  text-align:left;
-
+	
+text-align:left;
   width: 300px;
   height: 200px;
 }
+
+
 
 h1{
   font-weight:400;
@@ -85,6 +87,7 @@ input {
   font-size: 1em;
   font-family:inherit;
   background:white;
+  
 }
 
 #explications {
@@ -101,6 +104,12 @@ font-weight:bold;
 
 
 
+#option{
+	
+		font-weight:500;
+
+	
+}
 .lds-dual-ring {
   display: inline-block;
   width: 80px;
