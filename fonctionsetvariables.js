@@ -670,7 +670,9 @@ async function deployer() {
 			contratPDF(prix, commission).then((leHash, blob) =>{
 				
 				console.log(leHash); 
-				blobPdf = blob
+				console.log(blob);
+				blobPdf = blob;
+				console.log(blobPdf);
 				contract.methods.setHash(leHash).send({from: accounts[0] })
 				
 				

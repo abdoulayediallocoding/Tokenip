@@ -21,9 +21,9 @@ body {
 
 #description {
 	
-text-align:left;
-  width: 300px;
-  height: 200px;
+	text-align:left;
+	  width: 300px;
+	  height: 200px;
 }
 
 
@@ -105,10 +105,7 @@ font-weight:bold;
 
 
 #option{
-	
-		font-weight:500;
-
-	
+font-weight:500;
 }
 .lds-dual-ring {
   display: inline-block;
