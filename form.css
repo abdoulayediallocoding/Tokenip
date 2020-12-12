@@ -125,3 +125,8 @@ font-weight:bold;
     transform: rotate(360deg);
   }
 }
+
+
+.has-danger .form-control {
+    border-bottom: 2px solid #dc1d34;
+}

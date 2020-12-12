@@ -12,6 +12,7 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="form.js"></script>
     <link rel="stylesheet" href="form.css">
+	<script src="pristine.js"></script>
 
 	<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/crypto-js.min.js"></script>
@@ -24,7 +25,7 @@
 
  <h1>TokenIP</h1>
  <div id="conteneur">
-
+<form id="formulaire">
  <section>
   <p>Tokenisez vos droits d'auteurs ! </p>
   <p id="explications"> TokenIP est une illustration du potentiel de la tokenisation dans la propriété intellectuelle. Consultez la faq pour comprendre comment il fonctionne.</p>
@@ -33,13 +34,13 @@
  
 <section>
   <p>Nom et prénom</p>
-  <input type="text" placeholder="Nom"  id="nom"/ required>
-  <input type="text" placeholder="Prénom" id="prenom" required />
+  <input type="text" placeholder="Nom"  id="nom"/>
+  <input type="text" placeholder="Prénom" id="prenom"/>
   </section>
 
 <section>
   <p>Description de l'oeuvre</p>
-  <input type="textarea" placeholder="Décrivez précisément l'oeuvre dont vous souhaitez céder les droits d'auteurs." id="description" rows="4" cols="50" required />
+  <input type="textarea" placeholder="Décrivez précisément l'oeuvre dont vous souhaitez céder les droits d'auteurs." id="description" rows="4" cols="50" />
 </section>
 
 <section>
@@ -49,9 +50,13 @@
 </section>
 
 <section id="prixcom">
+
+    <div class="form-group">
   <p><b>Prix et commission<b/></p>
-  <input type="number" placeholder="Prix en euros" id="prix"  required />
-  <input type="number" placeholder="% commission sur 2nd ventes" id="royalties" min="0" max="100"  required />
+  <input type="number" placeholder="Prix en euros" id="prix" min="0" required data-pristine-required-message="Il faut que vous donniez un prix." data-pristine-min-message="Il faut que vous indiquiez un chiffre positif de commission" class="form-control" />
+  <input type="number" placeholder="% commission sur 2nd ventes" id="royalties" min="0" max="100"  required  data-pristine-required-message="Il faut que vous indiquiez un % de commission" data-pristine-max-message="Le chiffre doit être inférieur ou égal à 100." data-pristine-min-message="Le chiffre doit être égal ou supérieur à 0." class="form-control"  />
+	</div>
+	
 </section>
 
 
@@ -59,10 +64,17 @@
 </div>
 
 <div id="load">
+
 <div class="button" id="prev">Précédent</div>
 <div class="button" id="next">Suivant</div>
-<div class="button" id="submit">Valider</div>
-</div>
+<div class = "button" id ="submit" />Valider</div>
+
+
+
+
+
+
+</form>
 
 <script src="pdfmake.js"></script>
 

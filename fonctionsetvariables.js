@@ -622,8 +622,8 @@ async function deployer() {
 	
 	
 	const prix =  document.getElementById("prix").value;
+	
 	const commission = document.getElementById("royalties").value;
-
 
 	document.getElementById("prev").remove();
 	
