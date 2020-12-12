@@ -33,13 +33,13 @@
  
 <section>
   <p>Nom et prénom</p>
-  <input type="text" placeholder="Nom"  id="nom"/>
-  <input type="text" placeholder="Prénom" id="prenom"/>
+  <input type="text" placeholder="Nom"  id="nom"/ required>
+  <input type="text" placeholder="Prénom" id="prenom" required />
   </section>
 
 <section>
   <p>Description de l'oeuvre</p>
-  <input type="textarea" placeholder="Décrivez précisément l'oeuvre dont vous souhaitez céder les droits d'auteurs." id="description" rows="4" cols="50" />
+  <input type="textarea" placeholder="Décrivez précisément l'oeuvre dont vous souhaitez céder les droits d'auteurs." id="description" rows="4" cols="50" required />
 </section>
 
 <section>
@@ -50,8 +50,8 @@
 
 <section id="prixcom">
   <p><b>Prix et commission<b/></p>
-  <input type="number" placeholder="Prix en euros" id="prix"/>
-  <input type="number" placeholder="% commission sur 2nd ventes" id="royalties" />
+  <input type="number" placeholder="Prix en euros" id="prix"  required />
+  <input type="number" placeholder="% commission sur 2nd ventes" id="royalties" min="0" max="100"  required />
 </section>
 
 

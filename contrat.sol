@@ -9,11 +9,13 @@ contract tokenDA is ERC721 {
     using Counters for Counters.Counter;
     using SafeMath for uint256;
     Counters.Counter private _tokenIds;
+    event Hash (bytes32 _hash);
+    bool hashIsSet = false;
+
     
 
     struct DA { // struct décrivant les propriétés du token DA
         address payable creator; // créateur des DA, donc réceptionnaire des royalties
-        bytes32 hash; // hash du contrat de cession
         address payable owner; // titulaire des DA
         uint256 feeRate; // % de commission 
         uint256 price; // prix de vente des DA
@@ -46,13 +48,17 @@ contract tokenDA is ERC721 {
     
     
     function setPrice (uint256 _price) public { // fixer le prix; fonction accessible qu'au titulaire des DA
+    
         require(msg.sender == da.owner);
+        
         da.price = _price;
         
     }
     
     function setSellable (bool _sellable) public { // rendre les da vendables ou non
+    
         require(msg.sender == da.owner, "Vous n etes pas le proprietaire");
+        
         da.sellable = _sellable;
     }
     
@@ -81,11 +87,13 @@ contract tokenDA is ERC721 {
     
     function setHash ( bytes32 _hash) public {
         
-    require(bytes32(da.hash).length == 0, "Le hash a deja ete cree");
 
-    require (msg.sender == da.creator);
-
-        da.hash = _hash;
+        require (msg.sender == da.creator);
+        require(hashIsSet ==false);
+        
+        emit Hash(_hash);
+        
+        hashIsSet = true;
         
     }
     

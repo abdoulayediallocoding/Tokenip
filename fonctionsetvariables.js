@@ -609,6 +609,8 @@ function presentationFinale (adresseTransaction, blob) {
 	
 	document.getElementById("prixcom").appendChild(p2);
 
+	console.log(blob);
+	
 	saveAs(blob);
 	
 	document.getElementById("loading").remove();
