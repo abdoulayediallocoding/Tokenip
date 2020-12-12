@@ -547,6 +547,7 @@ let addresseSmartcontract;
 
 let hashContrat;
 
+let blobPdf;
 
 
 
@@ -669,12 +670,14 @@ async function deployer() {
 			contratPDF(prix, commission).then((leHash, blob) =>{
 				
 				console.log(leHash); 
+				blobPdf = blob
 				contract.methods.setHash(leHash).send({from: accounts[0] })
 				
 				
 				.then(function(dernierHash){
 					
-					presentationFinale(addresseSmartcontract, blob);
+					presentationFinale(addresseSmartcontract, blobPdf);
+					
 				})
 				
 				;
