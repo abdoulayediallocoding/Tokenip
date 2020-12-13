@@ -668,7 +668,11 @@ async function deployer() {
 			
 			contratPDF(prix, commission).then((objet) =>{
 				
-				contract.methods.setHash(objet.hashContrat).send({from: accounts[0] })
+				
+				console.log(objet.hashContrat);
+				saveAs(objet.blob);
+				
+				//contract.methods.setHash(objet.hashContrat).send({from: accounts[0] })
 				
 				
 				.then(function(){
