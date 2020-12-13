@@ -20,18 +20,19 @@ body {
 
 
 #description {
-	 
-	text-align : left;
-	width: 300px;
-	height: 200px;
-	overflow : auto;
-	margin: 7px 0px;
-	font-size: 1em;
+	 	 
+  
+  width: 300px;
+height: 200px;
+  margin: 7px 0px;
+  display: inline-block;
+  padding: 12px 25px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  font-size: 1em;
   font-family:inherit;
   background:white;
-    padding: 12px 25px;
-border-radius: 5px;
-  border: 1px solid lightgrey;
 
 
 }
