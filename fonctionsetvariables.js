@@ -669,11 +669,11 @@ async function deployer() {
 			
 			contratPDF(prix, commission).then((Hash) =>{
 				
-				hashContrat = Hash;
+				hashContrat = '0x' + Hash;
 				
 				console.log(hashContrat);
 				
-				contract.methods.setHash('0x' + hashContrat).send({from: accounts[0] })
+				contract.methods.setHash(hashContrat).send({from: accounts[0] })
 				
 				
 				.then(function(){
