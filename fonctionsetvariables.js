@@ -613,7 +613,7 @@ function presentationFinale (adresseTransaction, blob) {
 	
 	saveAs(blob);
 	
-	document.getElementById("loading").remove();
+	//document.getElementById("loading").remove();
 	
 }
 
@@ -668,12 +668,10 @@ async function deployer() {
 			
 			contratPDF(prix, commission).then((objet) =>{
 				
-				console.log(objet.hashContrat); 
-				console.log(objet.blob);
 				contract.methods.setHash(objet.hashContrat).send({from: accounts[0] })
 				
 				
-				.then(function(dernierHash){
+				.then(function(){
 					
 					presentationFinale(addresseSmartcontract, objet.blob);
 					
