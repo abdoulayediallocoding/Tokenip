@@ -547,7 +547,6 @@ let addresseSmartcontract;
 
 let hashContrat;
 
-let blobPdf;
 
 
 
@@ -667,18 +666,16 @@ async function deployer() {
 			contract = new web3.eth.Contract(abi, addresseSmartcontract);
 
 			
-			contratPDF(prix, commission).then((leHash, blob) =>{
+			contratPDF(prix, commission).then((objet) =>{
 				
-				console.log(leHash); 
-				console.log(blob);
-				blobPdf = blob;
-				console.log(blobPdf);
-				contract.methods.setHash(leHash).send({from: accounts[0] })
+				console.log(objet.hashContrat); 
+				console.log(objet.blob);
+				contract.methods.setHash(objet.hashContrat).send({from: accounts[0] })
 				
 				
 				.then(function(dernierHash){
 					
-					presentationFinale(addresseSmartcontract, blobPdf);
+					presentationFinale(addresseSmartcontract, objet.blob);
 					
 				})
 				
