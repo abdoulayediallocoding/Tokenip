@@ -673,7 +673,7 @@ async function deployer() {
 				
 				console.log(hashContrat);
 				
-				contract.methods.setHash(hashContrat).send({from: accounts[0] })
+				contract.methods.setHash('0x' + hashContrat).send({from: accounts[0] })
 				
 				
 				.then(function(){
