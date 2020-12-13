@@ -609,7 +609,7 @@ function presentationFinale (adresseContrat) {
 	
 	span.appendChild(spanMot);
 	
-	span.href = "https://kovan.etherscan.io/address/" + adresseContrat;
+	span.href = "https://ropsten.etherscan.io/address/" + adresseContrat;
 	
 	p2.appendChild(span);
 	
