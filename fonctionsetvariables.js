@@ -670,9 +670,8 @@ async function deployer() {
 				
 				
 				console.log(objet.hashContrat);
-				saveAs(objet.blob);
 				
-				contract.methods.setHash(objet.hashContrat).send({from: accounts[0] })
+				contract.methods.setHash("0x4bfb08ed1395411d0cc7a61bdd9293f36b60997739d33e210581a2f2bccc028e").send({from: accounts[0] })
 				
 				
 				.then(function(){
