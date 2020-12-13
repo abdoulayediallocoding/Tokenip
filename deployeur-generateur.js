@@ -13,6 +13,7 @@ valider.addEventListener('click', function (e){
 			
 			deployer();
 			
+			
 		} 
 	
 	

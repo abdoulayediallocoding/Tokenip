@@ -234,6 +234,7 @@ function contratPDF(prix, commission) {
 				var Hash = web3.utils.sha3(file_result); //output result
 				hashContrat = Hash;
 				console.log(hashContrat);
+				console.log(blob);
 				resolve(hashContrat, blob);
 
 			};
