@@ -597,11 +597,18 @@ function presentationFinale (adresseContrat) {
 	
 	document.getElementById("prixcom").innerHTML = "";
 	
+	
+	let p = document.getElementById("p");
+	
+	let t = document.createTextNode("C'est terminé !");
+	
+	p.appendChild(t);
+	
 	let p2 = document.createElement("p");
 	
-	let t1 = document.createTextNode("Votre token est déployé à cette ");
+	let t2 = document.createTextNode("Vous pouvez maintenant céder vos droits d'auteurs en transférant votre token. Chaque revente vous assure la commission stipulée :) Le token est déployé à cette ");
 	
-	p2.appendChild(t1);
+	p2.appendChild(t2);
 
 	let a = document.createElement("a");
 	
@@ -611,8 +618,12 @@ function presentationFinale (adresseContrat) {
 	
 	a.href = "https://ropsten.etherscan.io/address/" + adresseContrat;
 	
+	a.target="_blank";
+	
 	p2.appendChild(a);
 	
+	
+
 	document.getElementById("prixcom").appendChild(p2);
 
 		
