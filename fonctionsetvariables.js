@@ -537,7 +537,7 @@ reader.onload = function (f) {
 	var file_result = this.result; // this == reader, get the loaded file "result"
 	var file_wordArr = CryptoJS.lib.WordArray.create(file_result); //convert blob to WordArray , see https://code.google.com/p/crypto-js/issues/detail?id=67
 	var sha256_hash = CryptoJS.SHA256(file_wordArr); //calculate SHA1 hash
-	hash = sha256_hash.toString(); //output result
+	hashOeuvre = sha256_hash.toString(); //output result
 };
 reader.readAsArrayBuffer(file); //read file as ArrayBuffer
 });	 
@@ -598,7 +598,7 @@ function presentationFinale (adresseContrat) {
 	document.getElementById("prixcom").innerHTML = "";
 	
 	
-	let p = document.getElementById("p");
+	let p = document.createElement("p");
 	
 	let t = document.createTextNode("C'est terminé !");
 	
