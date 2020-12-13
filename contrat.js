@@ -224,17 +224,20 @@ function contratPDF(prix, commission) {
 		blob.name = "contrat-cession-da"
 		
 		var reader = new FileReader();
-		reader.readAsArrayBuffer(blob);
+		reader.readAsText(blob);
 		
 			reader.onload = function () {
 				
-				
+
 				var file_result = this.result; // this == reader, get the loaded file "result"
-				var file_wordArr = CryptoJS.lib.WordArray.create(file_result); //convert blob to WordArray , see https://code.google.com/p/crypto-js/issues/detail?id=67
-				var sha256_hash = CryptoJS.SHA256(file_wordArr); //calculate SHA1 hash
-				var Hash = sha256_hash.toString(); //output result
-				const objet = {hashContrat: Hash,  blob: blob}
-				resolve (objet);
+				//var file_wordArr = CryptoJS.lib.WordArray.create(file_result); //convert blob to WordArray , see https://code.google.com/p/crypto-js/issues/detail?id=67
+				//var sha256_hash = CryptoJS.SHA256(file_wordArr); //calculate SHA1 hash
+				var Hash = web3.utils.sha3(file_result); //output result
+				hashContrat = Hash;
+				console.log(hashContrat);
+				console.log(blob);
+				const objet = {hashContrat: hashContrat,  blob: blob}
+				resolve(objet);
 
 
 			};

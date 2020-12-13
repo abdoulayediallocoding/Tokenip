@@ -24,13 +24,13 @@ body {
 	text-align:left;
 	  width: 300px;
 	  height: 200px;
-	vertical-align: text-top;
+	padding: 25; /* etc */ }
+
+	
 }
 
 
-textarea {
-  vertical-align: text-top;
-}
+
 
 
 
