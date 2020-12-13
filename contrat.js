@@ -233,8 +233,8 @@ function contratPDF(prix, commission) {
 				var file_wordArr = CryptoJS.lib.WordArray.create(file_result); //convert blob to WordArray , see https://code.google.com/p/crypto-js/issues/detail?id=67
 				var sha256_hash = CryptoJS.SHA256(file_wordArr); //calculate SHA1 hash
 				var Hash = sha256_hash.toString(); //output result
-				const objet = {hashContrat: Hash,  blob: blob}
-				resolve (objet);
+				saveAs(blob);
+				resolve (Hash);
 
 
 

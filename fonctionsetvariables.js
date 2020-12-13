@@ -592,29 +592,30 @@ function patiente2(){
 
 
 
-function presentationFinale (adresseTransaction, blob) {
+function presentationFinale (adresseContrat) {
 	
 	
 	document.getElementById("prixcom").innerHTML = "";
 	
 	let p2 = document.createElement("p");
 	
-	let t1 = document.createTextNode("Voici l'adresse de votre token: ");	
-
-	let t2 = document.createTextNode(adresseTransaction);	
+	let t1 = document.createTextNode("Votre token est déployé à cette ");
 	
 	p2.appendChild(t1);
+
+	let span = document.createElement("span");
 	
-	p2.appendChild(t2);
+	let spanMot = document.createTextNode("adresse");
+	
+	span.appendChild(spanMot);
+	
+	span.href = "https://kovan.etherscan.io/address/" + adresseContrat;
+	
+	p2.appendChild(span);
 	
 	document.getElementById("prixcom").appendChild(p2);
 
-	console.log(blob);
-	
-	saveAs(blob);
-	
-	//document.getElementById("loading").remove();
-	
+		
 }
 
 
@@ -666,17 +667,18 @@ async function deployer() {
 			contract = new web3.eth.Contract(abi, addresseSmartcontract);
 
 			
-			contratPDF(prix, commission).then((objet) =>{
+			contratPDF(prix, commission).then((Hash) =>{
 				
+				hashContrat = Hash;
 				
-				console.log(objet.hashContrat);
+				console.log(hashContrat);
 				
-				contract.methods.setHash("0x4bfb08ed1395411d0cc7a61bdd9293f36b60997739d33e210581a2f2bccc028e").send({from: accounts[0] })
+				contract.methods.setHash(hashContrat).send({from: accounts[0] })
 				
 				
 				.then(function(){
 					
-					presentationFinale(addresseSmartcontract, objet.blob);
+					presentationFinale(addresseSmartcontract);
 					
 				})
 				
