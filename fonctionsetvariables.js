@@ -603,15 +603,15 @@ function presentationFinale (adresseContrat) {
 	
 	p2.appendChild(t1);
 
-	let span = document.createElement("span");
+	let a = document.createElement("a");
 	
 	let spanMot = document.createTextNode("adresse");
 	
-	span.appendChild(spanMot);
+	a.appendChild(spanMot);
 	
-	span.href = "https://ropsten.etherscan.io/address/" + adresseContrat;
+	a.href = "https://ropsten.etherscan.io/address/" + adresseContrat;
 	
-	p2.appendChild(span);
+	p2.appendChild(a);
 	
 	document.getElementById("prixcom").appendChild(p2);
 
