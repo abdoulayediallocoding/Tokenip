@@ -90,7 +90,7 @@ function contratPDF(prix, commission) {
                             oeuvre,
                             " (ci-après la « Création »).",
 							"\n\n",
-							"L'oeuvre est représentée par l'empreinte numérique suivante(hash 256) : ",
+							"L'oeuvre est représentée par l'empreinte numérique suivante (hash 256) : ",
 							hashOeuvre,
                             "\n\n",
                             "Il a souhaité représenter le présent contrat de cession de droits d'auteur par un Jeton existant dans la Blockchain. La détention du Jeton indique qui est la partie cessionnaire des droits d'auteurs.\n\n",

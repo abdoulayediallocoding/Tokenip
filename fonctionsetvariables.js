@@ -606,7 +606,9 @@ function presentationFinale (adresseContrat) {
 	
 	let p2 = document.createElement("p");
 	
-	let t2 = document.createTextNode("Vous pouvez maintenant céder vos droits d'auteurs en transférant votre token. Chaque revente vous assure la commission stipulée :) Le token est déployé à cette ");
+	p2.id ="messageFin";
+	
+	let t2 = document.createTextNode("Vous pouvez maintenant céder vos droits d'auteurs en transférant votre token. A chaque revente, vous recevrez automatiquement la commission stipulée :) Le token est déployé à cette ");
 	
 	p2.appendChild(t2);
 
@@ -623,6 +625,8 @@ function presentationFinale (adresseContrat) {
 	p2.appendChild(a);
 	
 	
+	document.getElementById("prixcom").appendChild(p1);
+
 
 	document.getElementById("prixcom").appendChild(p2);
 
