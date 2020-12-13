@@ -29,7 +29,7 @@ body {
 
 
 textarea {
-  vertical-align: top;
+  vertical-align: text-top;
 }
 
 
@@ -94,6 +94,7 @@ input {
   font-size: 1em;
   font-family:inherit;
   background:white;
+
   
 }
 
