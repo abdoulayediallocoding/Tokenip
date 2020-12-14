@@ -625,7 +625,7 @@ function presentationFinale (adresseContrat) {
 	p2.appendChild(a);
 	
 	
-	document.getElementById("prixcom").appendChild(p1);
+	document.getElementById("prixcom").appendChild(p);
 
 
 	document.getElementById("prixcom").appendChild(p2);
