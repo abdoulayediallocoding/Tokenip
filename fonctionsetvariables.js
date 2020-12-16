@@ -552,9 +552,6 @@ let hashContrat;
 
 function patiente1(){
 	
-	
-	
-
 	let section = document.getElementById("prixcom");
 	
 	section.innerHTML = "<p>Patientez quelques instants</p><p>Etape 1/2 : Création du token et génération du contrat...</p>";
@@ -567,9 +564,6 @@ function patiente1(){
 	
 	section.appendChild(loading);
 
-	
-	
-	
 }
 
 
@@ -647,14 +641,8 @@ async function deployer() {
 	
 	patiente1();
 	
-	
-	
-	
-		
 	accounts = await ethereum.request({ method: 'eth_requestAccounts' });
-	
-	patiente1();
-	
+		
 	let compteEthereum = accounts[0];
 		
 	contratADeployer.deploy({
