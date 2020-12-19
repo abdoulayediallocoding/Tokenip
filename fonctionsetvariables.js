@@ -548,6 +548,54 @@ let addresseSmartcontract;
 let hashContrat;
 
 
+const s = document.getElementById("intro");
+
+	let loading = document.createElement("div");
+	
+	loading.className="lds-dual-ring";
+	
+	loading.id = "loading";
+	
+	s.appendChild(loading);
+
+
+
+
+
+
+async function detectMetamask(){
+	
+	const provider = await detectEthereumProvider()
+
+	
+	
+	if (provider) {
+    
+		document.getElementById("loading").remove();
+		
+		const p = document.getElementById("explications");
+
+		const t = document.createTextNode("TokenIP est une illustration du potentiel de la tokenisation en droits d'auteurs. Pour utiliser l'outil, il faut que vous téléchargiez l'extension MetaMask. Consultez la faq.");
+	
+		p.appendChild(t);	
+		
+  } else {
+		
+		document.getElementById("loading").remove();
+		
+		const p = document.getElementById("explications");
+
+		t2 = document.createTextNode("TokenIP est une illustration du potentiel de la tokenisation dans la propriété intellectuelle. Consultez la faq pour comprendre comment il fonctionne.");
+
+		p.appendChild(t2);
+		
+  }
+	
+	
+}
+
+
+detectMetamask();
 
 
 function patiente1(){
