@@ -575,7 +575,7 @@ async function detectMetamask(){
 		
 		const p = document.getElementById("explications");
 
-		const t = document.createTextNode("TokenIP est une illustration du potentiel de la tokenisation en droits d'auteurs. Pour utiliser l'outil, il faut que vous téléchargiez l'extension MetaMask. Consultez la faq.");
+		const t = document.createTextNode("TokenIP est une illustration du potentiel de la tokenisation dans la propriété intellectuelle. Consultez la faq pour comprendre comment il fonctionne.");
 	
 		p.appendChild(t);	
 		
@@ -585,7 +585,7 @@ async function detectMetamask(){
 		
 		const p = document.getElementById("explications");
 
-		t2 = document.createTextNode("TokenIP est une illustration du potentiel de la tokenisation dans la propriété intellectuelle. Consultez la faq pour comprendre comment il fonctionne.");
+		t2 = document.createTextNode("Pour utiliser TokenIP vous devez installer l'extension navigateur MetaMask. Consultez la faq pour découvrir comment.");
 
 		p.appendChild(t2);
 		
