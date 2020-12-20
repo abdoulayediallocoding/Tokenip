@@ -585,7 +585,7 @@ async function detectMetamask(){
 		
 		const p = document.getElementById("explications");
 
-		t2 = document.createTextNode("Pour utiliser TokenIP vous devez installer l'extension navigateur MetaMask. Consultez la faq pour découvrir comment.");
+		t2 = document.createTextNode("Vous n'avez pas MetaMask installé sur votre navigateur ! Pour utiliser TokenIP, vous devez installer l'extension navigateur MetaMask. Consultez la faq pour découvrir comment faire.");
 
 		p.appendChild(t2);
 		

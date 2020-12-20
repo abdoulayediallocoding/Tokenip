@@ -1,3 +1,6 @@
+
+
+
 const formu = document.getElementById("formulaire");
 const pristine = new Pristine(formu);
 const valider =  document.getElementById("submit");
@@ -11,8 +14,8 @@ valider.addEventListener('click', function (e){
 
 		if (valid == true){
 			
-			deployer();
-			
+			//deployer();
+			contratPDF(1, 1);
 			
 		} 
 	

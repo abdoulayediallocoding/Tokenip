@@ -13,6 +13,7 @@ function contratPDF(prix, commission) {
 	
     let compteEthereum = accounts[0];
 	
+	let date =  new Date();
 	
 	let docDefinition = {
 
@@ -35,12 +36,12 @@ function contratPDF(prix, commission) {
                     },
                     
                     {
-                        text: "La Blockchain : désigne le dispositif d'enregistrement électronique partagé Ethereum ; dans sa version implémentée par le client logiciel go-ethereum.\n\n",
+                        text: "La Blockchain : désigne le dispositif d'enregistrement électronique partagé test d'Ethereum (Ropsten) ; dans sa version implémentée par le client logiciel go-ethereum.\n\n",
                         alignment: 'left'
                     },
                     
                     {
-                        text: "Le Créateur : désigne la personne, physique ou morale, titulaire des droits patrimoniaux et extra-patrimoniaux sur la Création. Elle est titulaire de l'adresse Blockchain suivante: ",
+                        text: "Le Créateur : désigne la personne, physique ou morale, créatrice de l'oeuvre ( la Création) dont les droits sont cédés. Elle est titulaire des droits patrimoniaux et extra-patrimoniaux sur celle-ci et de l'adresse Blockchain suivante: ",
                         alignment: 'left'
                     },
 
@@ -53,7 +54,7 @@ function contratPDF(prix, commission) {
                     },
                     
                     {
-                        text: "Le Jeton : désigne l'actif numérique, émis, inscrit, et transférable dans la Blockchain, représentant ce contrat de cession. Le registre indiquant la propriété du Jeton est déployé dans la Blockchain à l'adresse suivante : ",
+                        text: "Le Jeton : désigne l'actif numérique, émis, inscrit, et transférable dans la Blockchain. La fonction ownerOf(1) de son registre permet de déterminer l'adresse Blockchain détentrice du Jeton. Le registre indiquant la propriété du Jeton est déployé dans la Blockchain à l'adresse suivante : ",
                         alignment: 'left'
                     },
                     {
@@ -69,7 +70,7 @@ function contratPDF(prix, commission) {
                     },
                     
                     {
-                        text: "Le Détenteur : désigne la personne, physique ou morale, titulaire de l'adresse Blockchain à laquelle est associée le Jeton.\n\n\n",
+                        text: "Le Détenteur : désigne la personne, physique ou morale, titulaire de l'adresse Blockchain que la fonction ownerOf(1) du registre indique être détentrice du Jeton.\n\n\n",
                         alignment: 'left',
 						pageBreak : "after"
                     },
@@ -90,12 +91,12 @@ function contratPDF(prix, commission) {
                             oeuvre,
                             " (ci-après la « Création »).",
 							"\n\n",
-							"L'oeuvre est représentée par l'empreinte numérique suivante (hash 256) : ",
+							"La Création est identifiée par l'empreinte numérique suivante (hash 256) : ",
 							hashOeuvre,
                             "\n\n",
-                            "Il a souhaité représenter le présent contrat de cession de droits d'auteur par un Jeton existant dans la Blockchain. La détention du Jeton indique qui est la partie cessionnaire des droits d'auteurs.\n\n",
-                            "Ainsi, le Détenteur du Jeton est le titulaire des droits d'exploitation présentement cédés.",
-                            "\n\n\n"
+                            "Le Créateur entend permettre la cession de ses droits d'auteurs à travers la Blokchain. Pour cela, il a déployé le Jeton dont la détention constitue la seule forme d'acceptation au présent contrat. \n\n",
+							"Ainsi, toute au personne que le Créateur qui est  Détenteur du Jeton, doit être considérée comme le cessionnaire de la présente cession de droits d'auteurs.\n\n\n",
+                             
                             
                         ]
                     },
@@ -126,7 +127,7 @@ function contratPDF(prix, commission) {
 
                             "le droit d’utiliser tout ou partie sa Création aux fins d’exploitations dérivées (communément désignées sous le nom de « merchandising »), notamment en vue de fabriquer et diffuser des produits commerciaux, de quelque nature que ce soit, et de les distribuer, en particulier dans les domaines des jeux, jouets, objets ou œuvres d'art plastique ou arts appliqués, papeterie, bureautique, fonds d’écran, articles de bureau, habillement, ameublement, articles de décoration, arts de la table, toilette, hygiène, alimentation ; \n\n",
 
-                            "Cette cession, consentie à titre exclusif et définitif, vaut pour toute la durée légale du droit d'auteur et pour le monde entier.\n\n\n"
+                            "Cette cession, consentie à titre exclusif, vaut pour toute la durée légale du droit d'auteur et pour le monde entier.\n\n\n"
                         ]
                     },
 
@@ -159,11 +160,11 @@ function contratPDF(prix, commission) {
 
                             " euros.\n\n ",
 
-                            "Par la suite, le Détenteur peut revendre son Jeton à des tiers au prix auquel il l'entend. Il s'engage toutefois à verser une commission de ",
+                            "Par la suite, le Détenteur peut revendre ses droits à des tiers au prix auquel il l'entend. Il s'engage toutefois à verser une commission de ",
 
                             commission,
 
-                            " % au Créateur sur la vente. Le versement de cette commission étant automatique. \n\n",
+                            " % au Créateur sur la vente. \n\n",
 
                             "Modalités de paiement : \n\n",
 
@@ -182,8 +183,6 @@ function contratPDF(prix, commission) {
                     {
                         text: ["Le Créateur autorise à ce que le Détenteur cède sa qualité de partie au présent contrat à un tiers. \n\n",
 
-                            "La cession est réalisée par le transfert du Jeton vers l'adresse Blockchain du tiers.\n\n",
-
                             "La détention du Jeton par le tiers vaut acceptation par ce dernier aux stipulations des présentes.\n\n",
 
                             "Il est alors Détenteur du Jeton et peut à son tour céder sa qualité de Partie au présent contrat. \n\n\n"
@@ -199,9 +198,44 @@ function contratPDF(prix, commission) {
                     {
                         text: ["Le présent contrat est soumis au droit français et sera régi et interprété selon ce droit. \n\n",
 
-                            "Tout litige pouvant naître à l'occasion de sa validité, de son interprétation ou de son exécution sera soumis à la compétence exclusive des Tribunaux de Paris, sauf règle de procédure impérative contraire."
+                            "Tout litige pouvant naître à l'occasion de sa validité, de son interprétation ou de son exécution sera soumis à la compétence exclusive des Tribunaux de Paris, sauf règle de procédure impérative contraire.\n\n\n"
                         ]
-                    }
+                    },
+					
+					
+					
+					{
+                        text: "ACTE DE CESSION DE CONTRAT\n\n\n",
+                        alignment: 'center',
+						bold : true
+                    },
+
+                    {
+                        text: ["Conformément à l'article 1216 du code civil, le présent acte vaut constatation écrite de la cession de contrat opérant lorsque le Détenteur transfère le Jeton à un tiers. \n\n", 
+
+							"Par cette opération, le Détenteur du Jeton cède au tiers sa qualité de partie au contrat de cession de droits d'auteur ci-dessus mentionné. \n\n",		
+
+							"L'acceptation à cet acte de cession ne peut prendre que la forme suivante : \n\n",
+
+							"-	Pour le tiers cessionnaire, elle consiste à utiliser la fonction buyDA() du Jeton pour l'acheter et en devenir le détenteur.\n\n",
+
+							"-	Pour le Détenteur du Jeton, elle consiste à approuver l'adresse du tiers cessionnaire dans la Blockchain afin qu'il puisse détenir le Jeton.\n\n",
+
+							"Lorsque ces deux conditions sont remplies, le tiers et le Détenteur  sont réputés avoir consenti à la présente cession de contrat.\n\n",
+
+							"Le tiers cessionnaire devient alors partie au contrat de cession de droits d'auteur ci-dessus mentionné en tant que Détenteur du Jeton."	
+				
+                            
+                        ]
+                    },
+					
+					
+					
+					
+					
+					
+					
+					
                 ]
             }
 
@@ -261,4 +295,3 @@ function contratPDF(prix, commission) {
 
 	
 	
-
