@@ -575,19 +575,17 @@ async function detectMetamask(){
 		
 		const p = document.getElementById("explications");
 
-		const t = document.createTextNode("TokenIP est une illustration du potentiel de la tokenisation dans la propriété intellectuelle. Consultez la faq pour comprendre comment il fonctionne.");
-	
-		p.appendChild(t);	
+		p.innerHTML = "<p id = 'explications'>TokenIP est une illustration du potentiel de la tokenisation dans la propriété intellectuelle. Consultez la <a href = 'faq.html'>faq</a> pour comprendre comment il fonctionne.</p>";
+		
 		
   } else {
 		
 		document.getElementById("loading").remove();
 		
 		const p = document.getElementById("explications");
+		
+		p.innerHTML = "<p id= 'explications'>Vous n'avez pas MetaMask installé sur votre navigateur ! Pour utiliser TokenIP, vous devez installer l'extension navigateur MetaMask. Consultez la <a href = 'faq.html'>faq</a> pour découvrir comment faire."
 
-		t2 = document.createTextNode("Vous n'avez pas MetaMask installé sur votre navigateur ! Pour utiliser TokenIP, vous devez installer l'extension navigateur MetaMask. Consultez la faq pour découvrir comment faire.");
-
-		p.appendChild(t2);
 		
   }
 	
