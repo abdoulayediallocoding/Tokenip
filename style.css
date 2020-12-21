@@ -18,6 +18,8 @@ body {
   display: -ms-flexbox;
   display: flex;
   min-height: 100vh;
+    background: url('https://i.pinimg.com/originals/48/79/86/487986c17560a8ed1afdc55e480e5be2.png');
+
 }
 .container {
   margin: 0 auto;
