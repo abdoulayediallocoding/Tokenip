@@ -12,7 +12,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Hind', sans-serif;
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
   color: black;
   display: -webkit-box;
   display: -webkit-flex;
@@ -48,6 +47,8 @@ h3 {
   font-size: 1.15rem;
   font-weight: 400;
   border-bottom: 1px solid #e5e5e5;
+    background-color :  rgb(239,239,239);
+
 }
 .accordion a:hover,
 .accordion a:hover::after {
@@ -94,6 +95,8 @@ h3 {
   -webkit-transition: all 0.2s ease 0.15s;
   -o-transition: all 0.2s ease 0.15s;
   transition: all 0.2s ease 0.15s;
+    background-color :  white;
+
 }
 .accordion .content p {
   font-size: 1rem;
@@ -106,4 +109,10 @@ h3 {
   -webkit-transition: all 0.35s ease 0.15s;
   -o-transition: all 0.35s ease 0.15s;
   transition: all 0.35s ease 0.15s;
+}
+
+#nostyle {
+
+all: revert;
+
 }
