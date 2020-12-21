@@ -14,8 +14,7 @@ valider.addEventListener('click', function (e){
 
 		if (valid == true){
 			
-			//deployer();
-			contratPDF(1, 1);
+			deployer();
 			
 		} 
 	
