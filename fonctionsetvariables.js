@@ -575,7 +575,7 @@ async function detectMetamask(){
 		
 		const p = document.getElementById("explications");
 
-		p.innerHTML = "<p id = 'explications'>TokenIP est une Dapp permettant de tokeniser des droits d'auteurs sur le réseau Ropsten d'ethereum. Consultez la <a href = 'faq.html'>faq</a> pour comprendre comment il fonctionne.</p>";
+		p.innerHTML = "<p id = 'explications'>TokenIP est une Dapp permettant de tokeniser des droits d'auteurs sur le réseau Ropsten d'ethereum. Consultez la <a href = 'faq.html'>faq</a> pour comprendre comment elle fonctionne.</p>";
 		
 		
   } else {
